@@ -1,0 +1,4 @@
+gravity
+solar
+aerodynamic
+magnetic
