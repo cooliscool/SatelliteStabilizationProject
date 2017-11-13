@@ -38,20 +38,20 @@ static const rtwCAPI_Signals rtBlockSignals [ ] = { { 0 , 1 , TARGET_STRING (
 TARGET_STRING ( "" ) , 0 , 0 , 1 , 0 , 0 } , { 0 , 0 , ( NULL ) , ( NULL ) ,
 0 , 0 , 0 , 0 , 0 } } ; static const rtwCAPI_BlockParameters
 rtBlockParameters [ ] = { { 9 , TARGET_STRING (
-"mainModel_matlab2013a/each wheel Inertia" ) , TARGET_STRING ( "Value" ) , 0
-, 2 , 0 } , { 10 , TARGET_STRING ( "mainModel_matlab2013a/initial Omega" ) ,
-TARGET_STRING ( "Value" ) , 0 , 1 , 0 } , { 11 , TARGET_STRING (
-"mainModel_matlab2013a/magTorq " ) , TARGET_STRING ( "Value" ) , 0 , 2 , 0 }
-, { 12 , TARGET_STRING ( "mainModel_matlab2013a/pitch,roll,yaw Initial" ) ,
-TARGET_STRING ( "Value" ) , 0 , 1 , 0 } , { 13 , TARGET_STRING (
+"mainModel_matlab2013a/disturbTorques" ) , TARGET_STRING ( "Value" ) , 0 , 1
+, 0 } , { 10 , TARGET_STRING ( "mainModel_matlab2013a/each wheel Inertia" ) ,
+TARGET_STRING ( "Value" ) , 0 , 2 , 0 } , { 11 , TARGET_STRING (
+"mainModel_matlab2013a/initial Omega" ) , TARGET_STRING ( "Value" ) , 0 , 1 ,
+0 } , { 12 , TARGET_STRING ( "mainModel_matlab2013a/magTorq " ) ,
+TARGET_STRING ( "Value" ) , 0 , 2 , 0 } , { 13 , TARGET_STRING (
+"mainModel_matlab2013a/pitch,roll,yaw Initial" ) , TARGET_STRING ( "Value" )
+, 0 , 1 , 0 } , { 14 , TARGET_STRING (
 "mainModel_matlab2013a/pitch,roll,yaw desired" ) , TARGET_STRING ( "Value" )
-, 0 , 1 , 0 } , { 14 , TARGET_STRING ( "mainModel_matlab2013a/rad To Deg" ) ,
-TARGET_STRING ( "Value" ) , 0 , 2 , 0 } , { 15 , TARGET_STRING (
+, 0 , 1 , 0 } , { 15 , TARGET_STRING ( "mainModel_matlab2013a/rad To Deg" ) ,
+TARGET_STRING ( "Value" ) , 0 , 2 , 0 } , { 16 , TARGET_STRING (
 "mainModel_matlab2013a/speeds" ) , TARGET_STRING ( "Value" ) , 0 , 0 , 0 } ,
-{ 16 , TARGET_STRING ( "mainModel_matlab2013a/zero disrturbance " ) ,
-TARGET_STRING ( "Value" ) , 0 , 1 , 0 } , { 17 , TARGET_STRING (
-"mainModel_matlab2013a/Integrator2" ) , TARGET_STRING (
-"UpperSaturationLimit" ) , 0 , 2 , 0 } , { 18 , TARGET_STRING (
+{ 17 , TARGET_STRING ( "mainModel_matlab2013a/Integrator2" ) , TARGET_STRING
+( "UpperSaturationLimit" ) , 0 , 2 , 0 } , { 18 , TARGET_STRING (
 "mainModel_matlab2013a/Integrator2" ) , TARGET_STRING (
 "LowerSaturationLimit" ) , 0 , 2 , 0 } , { 0 , ( NULL ) , ( NULL ) , 0 , 0 ,
 0 } } ; static const rtwCAPI_ModelParameters rtModelParameters [ ] = { { 0 ,
@@ -61,10 +61,10 @@ static void * rtDataAddrMap [ ] = { & rtB . myuvxki5uz [ 0 ] , & rtB .
 lfcefqioah [ 0 ] , & rtB . bolfbkf5bm [ 0 ] , & rtB . f5dkugssxf [ 0 ] , &
 rtB . pqvw0y53rd [ 0 ] , & rtB . imaxglwpam [ 0 ] , & rtB . lsvistcdke [ 0 ]
 , & rtB . icv3szrgyv [ 0 ] , & rtB . gc2jbymdlz [ 0 ] , & rtP .
-eachwheelInertia_Value , & rtP . initialOmega_Value [ 0 ] , & rtP .
-magTorq_Value , & rtP . pitchrollyawInitial_Value [ 0 ] , & rtP .
-pitchrollyawdesired_Value [ 0 ] , & rtP . radToDeg_Value , & rtP .
-speeds_Value [ 0 ] , & rtP . zerodisrturbance_Value [ 0 ] , & rtP .
+disturbTorques_Value [ 0 ] , & rtP . eachwheelInertia_Value , & rtP .
+initialOmega_Value [ 0 ] , & rtP . magTorq_Value , & rtP .
+pitchrollyawInitial_Value [ 0 ] , & rtP . pitchrollyawdesired_Value [ 0 ] , &
+rtP . radToDeg_Value , & rtP . speeds_Value [ 0 ] , & rtP .
 Integrator2_UpperSat , & rtP . Integrator2_LowerSat , } ; static int32_T *
 rtVarDimsAddrMap [ ] = { ( NULL ) } ;
 #endif
@@ -86,8 +86,8 @@ const void * ) & rtcapiStoredFloats [ 0 ] , 0 , 0 } , { ( NULL ) , ( NULL ) ,
 rtBlockSignals , 9 , ( NULL ) , 0 , ( NULL ) , 0 } , { rtBlockParameters , 10
 , rtModelParameters , 0 } , { ( NULL ) , 0 } , { rtDataTypeMap ,
 rtDimensionMap , rtFixPtMap , rtElementMap , rtSampleTimeMap ,
-rtDimensionArray } , "float" , { 4043247365U , 3255279474U , 689865706U ,
-4166392582U } , ( NULL ) , 0 , 0 } ; const rtwCAPI_ModelMappingStaticInfo *
+rtDimensionArray } , "float" , { 3340177895U , 3593844884U , 2649559681U ,
+2269019960U } , ( NULL ) , 0 , 0 } ; const rtwCAPI_ModelMappingStaticInfo *
 mainModel_matlab2013a_GetCAPIStaticMap ( ) { return & mmiStatic ; }
 #ifndef HOST_CAPI_BUILD
 void mainModel_matlab2013a_InitializeDataMapInfo ( ) { rtwCAPI_SetVersion ( (

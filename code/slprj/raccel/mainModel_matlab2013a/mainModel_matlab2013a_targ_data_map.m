@@ -59,7 +59,7 @@
 	  section.data(7).logicalSrcIdx = 6;
 	  section.data(7).dtTransOffset = 13;
 	
-	  ;% rtP.zerodisrturbance_Value
+	  ;% rtP.disturbTorques_Value
 	  section.data(8).logicalSrcIdx = 7;
 	  section.data(8).dtTransOffset = 16;
 	
@@ -260,8 +260,8 @@
   ;%
 
 
-  targMap.checksum0 = 4043247365;
-  targMap.checksum1 = 3255279474;
-  targMap.checksum2 = 689865706;
-  targMap.checksum3 = 4166392582;
+  targMap.checksum0 = 3340177895;
+  targMap.checksum1 = 3593844884;
+  targMap.checksum2 = 2649559681;
+  targMap.checksum3 = 2269019960;
 

@@ -143,24 +143,23 @@ rtB . icv3szrgyv [ i ] - tmp_e ; } for ( i = 0 ; i < 3 ; i ++ ) { rtB .
 gc2jbymdlz [ i ] = rtX . affdlhtmjo [ i ] * rtP . radToDeg_Value ; y [ i ] =
 ( real_T ) a [ i + 6 ] * temp1 [ 2 ] + ( ( real_T ) a [ i + 3 ] * temp1 [ 1 ]
 + ( real_T ) a [ i ] * temp1 [ 0 ] ) ; } rtB . bolfbkf5bm [ 0 ] = ( ( rtP .
-zerodisrturbance_Value [ 0 ] + rtP . magTorq_Value ) - rtB . lfcefqioah [ 0 ]
-) - ( temp1 [ 1 ] * y [ 2 ] - temp1 [ 2 ] * y [ 1 ] ) ; rtB . bolfbkf5bm [ 1
-] = ( ( ( rtP . zerodisrturbance_Value [ 1 ] + rtP . magTorq_Value ) - rtB .
+disturbTorques_Value [ 0 ] + rtP . magTorq_Value ) - rtB . lfcefqioah [ 0 ] )
+- ( temp1 [ 1 ] * y [ 2 ] - temp1 [ 2 ] * y [ 1 ] ) ; rtB . bolfbkf5bm [ 1 ]
+= ( ( ( rtP . disturbTorques_Value [ 1 ] + rtP . magTorq_Value ) - rtB .
 lfcefqioah [ 1 ] ) - ( temp1 [ 2 ] * y [ 0 ] - temp1 [ 0 ] * y [ 2 ] ) ) -
-rtB . bolfbkf5bm [ 0 ] * 0.031064799739498536 ; rtB . bolfbkf5bm [ 2 ] = ( (
-( ( rtP . zerodisrturbance_Value [ 2 ] + rtP . magTorq_Value ) - rtB .
+rtB . bolfbkf5bm [ 0 ] * - 0.027777777777777776 ; rtB . bolfbkf5bm [ 2 ] = (
+( ( ( rtP . disturbTorques_Value [ 2 ] + rtP . magTorq_Value ) - rtB .
 lfcefqioah [ 2 ] ) - ( temp1 [ 0 ] * y [ 1 ] - temp1 [ 1 ] * y [ 0 ] ) ) -
-rtB . bolfbkf5bm [ 0 ] * 0.01185281667209378 ) - rtB . bolfbkf5bm [ 1 ] * -
-0.020833333333333332 ; rtB . bolfbkf5bm [ 2 ] /= 0.00083333333333333339 ; rtB
-. bolfbkf5bm [ 0 ] -= rtB . bolfbkf5bm [ 2 ] * 6.5912368419718371E-6 ; rtB .
-bolfbkf5bm [ 1 ] -= rtB . bolfbkf5bm [ 2 ] * - 1.3025073266037122E-5 ; rtB .
-bolfbkf5bm [ 1 ] /= 0.00062520351676978187 ; rtB . bolfbkf5bm [ 0 ] -= rtB .
-bolfbkf5bm [ 1 ] * 1.7274835019893224E-5 ; rtB . bolfbkf5bm [ 0 ] /=
-0.000556090339057569 ; C_pryToOmega [ 0 ] = - muDoubleScalarSin (
-nndjph3uih_idx_1 ) ; C_pryToOmega [ 3 ] = 0.0 ; C_pryToOmega [ 6 ] = 1.0 ;
-C_pryToOmega [ 1 ] = muDoubleScalarCos ( nndjph3uih_idx_1 ) *
-muDoubleScalarSin ( nndjph3uih_idx_2 ) ; C_pryToOmega [ 4 ] =
-muDoubleScalarCos ( nndjph3uih_idx_2 ) ; C_pryToOmega [ 7 ] = 0.0 ;
+rtB . bolfbkf5bm [ 0 ] * - 0.0083333333333333332 ) - rtB . bolfbkf5bm [ 1 ] *
+0.015377932232841007 ; rtB . bolfbkf5bm [ 2 ] /= 1199.4969591659426 ; rtB .
+bolfbkf5bm [ 0 ] -= rtB . bolfbkf5bm [ 2 ] * - 15.0 ; rtB . bolfbkf5bm [ 1 ]
+-= rtB . bolfbkf5bm [ 2 ] * 24.583333333333332 ; rtB . bolfbkf5bm [ 1 ] /=
+1598.6111111111111 ; rtB . bolfbkf5bm [ 0 ] -= rtB . bolfbkf5bm [ 1 ] * -
+50.0 ; rtB . bolfbkf5bm [ 0 ] /= 1800.0 ; C_pryToOmega [ 0 ] = -
+muDoubleScalarSin ( nndjph3uih_idx_1 ) ; C_pryToOmega [ 3 ] = 0.0 ;
+C_pryToOmega [ 6 ] = 1.0 ; C_pryToOmega [ 1 ] = muDoubleScalarCos (
+nndjph3uih_idx_1 ) * muDoubleScalarSin ( nndjph3uih_idx_2 ) ; C_pryToOmega [
+4 ] = muDoubleScalarCos ( nndjph3uih_idx_2 ) ; C_pryToOmega [ 7 ] = 0.0 ;
 C_pryToOmega [ 2 ] = muDoubleScalarCos ( nndjph3uih_idx_1 ) *
 muDoubleScalarCos ( nndjph3uih_idx_2 ) ; C_pryToOmega [ 5 ] = -
 muDoubleScalarSin ( nndjph3uih_idx_2 ) ; C_pryToOmega [ 8 ] = 0.0 ; i = 0 ;
@@ -330,9 +329,9 @@ ssSetNumSampleTimes ( rtS , 1 ) ; ssSetNumBlocks ( rtS , 24 ) ;
 ssSetNumBlockIO ( rtS , 9 ) ; ssSetNumBlockParams ( rtS , 21 ) ; } void
 MdlInitializeSampleTimes ( void ) { ssSetSampleTime ( rtS , 0 , 0.0 ) ;
 ssSetOffsetTime ( rtS , 0 , 0.0 ) ; } void raccel_set_checksum ( SimStruct *
-rtS ) { ssSetChecksumVal ( rtS , 0 , 4043247365U ) ; ssSetChecksumVal ( rtS ,
-1 , 3255279474U ) ; ssSetChecksumVal ( rtS , 2 , 689865706U ) ;
-ssSetChecksumVal ( rtS , 3 , 4166392582U ) ; } SimStruct *
+rtS ) { ssSetChecksumVal ( rtS , 0 , 3340177895U ) ; ssSetChecksumVal ( rtS ,
+1 , 3593844884U ) ; ssSetChecksumVal ( rtS , 2 , 2649559681U ) ;
+ssSetChecksumVal ( rtS , 3 , 2269019960U ) ; } SimStruct *
 raccel_register_model ( void ) { static struct _ssMdlInfo mdlInfo ; ( void )
 memset ( ( char * ) rtS , 0 , sizeof ( SimStruct ) ) ; ( void ) memset ( (
 char * ) & mdlInfo , 0 , sizeof ( struct _ssMdlInfo ) ) ; ssSetMdlInfoPtr (
@@ -446,9 +445,9 @@ ssSetSolverIgnoredZcDiagnostic ( rtS , 1 ) ; ssSetSolverMaxConsecutiveMinStep
 rtS , INT_MIN ) ; ssSetTNext ( rtS , rtMinusInf ) ; ssSetSolverNeedsReset (
 rtS ) ; ssSetNumNonsampledZCs ( rtS , 12 ) ; ssSetContStateDisabled ( rtS ,
 contStatesDisabled ) ; ssSetSolverMaxConsecutiveMinStep ( rtS , 1 ) ; }
-ssSetChecksumVal ( rtS , 0 , 4043247365U ) ; ssSetChecksumVal ( rtS , 1 ,
-3255279474U ) ; ssSetChecksumVal ( rtS , 2 , 689865706U ) ; ssSetChecksumVal
-( rtS , 3 , 4166392582U ) ; { static const sysRanDType rtAlwaysEnabled =
+ssSetChecksumVal ( rtS , 0 , 3340177895U ) ; ssSetChecksumVal ( rtS , 1 ,
+3593844884U ) ; ssSetChecksumVal ( rtS , 2 , 2649559681U ) ; ssSetChecksumVal
+( rtS , 3 , 2269019960U ) ; { static const sysRanDType rtAlwaysEnabled =
 SUBSYS_RAN_BC_ENABLE ; static RTWExtModeInfo rt_ExtModeInfo ; static const
 sysRanDType * systemRan [ 5 ] ; gblRTWExtModeInfo = & rt_ExtModeInfo ;
 ssSetRTWExtModeInfo ( rtS , & rt_ExtModeInfo ) ;

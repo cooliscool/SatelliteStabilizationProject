@@ -62,8 +62,8 @@ DataMapInfo ; struct P_ { real_T speeds_Value [ 4 ] ; real_T
 Integrator2_UpperSat ; real_T Integrator2_LowerSat ; real_T
 pitchrollyawdesired_Value [ 3 ] ; real_T pitchrollyawInitial_Value [ 3 ] ;
 real_T eachwheelInertia_Value ; real_T initialOmega_Value [ 3 ] ; real_T
-zerodisrturbance_Value [ 3 ] ; real_T magTorq_Value ; real_T radToDeg_Value ;
-} ; extern const char * RT_MEMORY_ALLOCATION_ERROR ; extern B rtB ; extern X
+disturbTorques_Value [ 3 ] ; real_T magTorq_Value ; real_T radToDeg_Value ; }
+; extern const char * RT_MEMORY_ALLOCATION_ERROR ; extern B rtB ; extern X
 rtX ; extern DW rtDW ; extern P rtP ; extern const
 rtwCAPI_ModelMappingStaticInfo * mainModel_matlab2013a_GetCAPIStaticMap (
 void ) ; extern SimStruct * const rtS ; extern const int_T gblNumToFiles ;
