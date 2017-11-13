@@ -1,0 +1,6 @@
+#include "__cf_mainModel_matlab2013a_debugVersion.h"
+#ifndef RTW_HEADER_mainModel_matlab2013a_debugVersion_capi_h
+#define RTW_HEADER_mainModel_matlab2013a_debugVersion_capi_h
+#include "mainModel_matlab2013a_debugVersion.h"
+extern void mainModel_matlab2013a_debugVersion_InitializeDataMapInfo ( ) ;
+#endif

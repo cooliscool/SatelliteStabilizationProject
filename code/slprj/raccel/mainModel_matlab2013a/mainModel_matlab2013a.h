@@ -30,7 +30,7 @@
 #define NSAMPLE_TIMES (2) 
 #define NINPUTS (0)       
 #define NOUTPUTS (0)     
-#define NBLOCKIO (7) 
+#define NBLOCKIO (9) 
 #define NUM_ZC_EVENTS (0) 
 #ifndef NCSTATES
 #define NCSTATES (10)   
@@ -45,25 +45,26 @@
 #endif
 #ifndef IN_RACCEL_MAIN
 #endif
-typedef struct { real_T imaxglwpam [ 3 ] ; real_T nndjph3uih [ 3 ] ; real_T
-pqvw0y53rd [ 3 ] ; real_T lsvistcdke [ 4 ] ; real_T f5dkugssxf [ 3 ] ; real_T
-bolfbkf5bm [ 3 ] ; real_T myuvxki5uz [ 4 ] ; } B ; typedef struct { struct {
-void * LoggedData ; } ht24oybvsi ; int_T kpaaqs1xgt ; int_T kgvzigyyvz ;
-int_T dwvympwnqe ; int_T gvver4kgdc [ 4 ] ; } DW ; typedef struct { real_T
-affdlhtmjo [ 3 ] ; real_T olx0irmnay [ 3 ] ; real_T jyci2cli0a [ 4 ] ; } X ;
-typedef struct { real_T affdlhtmjo [ 3 ] ; real_T olx0irmnay [ 3 ] ; real_T
-jyci2cli0a [ 4 ] ; } XDot ; typedef struct { boolean_T affdlhtmjo [ 3 ] ;
-boolean_T olx0irmnay [ 3 ] ; boolean_T jyci2cli0a [ 4 ] ; } XDis ; typedef
-struct { real_T affdlhtmjo [ 3 ] ; real_T olx0irmnay [ 3 ] ; real_T
-jyci2cli0a [ 4 ] ; } CStateAbsTol ; typedef struct { real_T friquz4qw4 [ 4 ]
-; real_T lfel3hyyxk [ 4 ] ; real_T mnjyl0hqhi [ 4 ] ; } ZCV ; typedef struct
-{ rtwCAPI_ModelMappingInfo mmi ; } DataMapInfo ; struct P_ { real_T
-pitchrollyawInitial_Value [ 3 ] ; real_T pitchrollyawdesired_Value [ 3 ] ;
-real_T initialOmega_Value [ 3 ] ; real_T speeds_Value [ 4 ] ; real_T
+typedef struct { real_T lsvistcdke [ 4 ] ; real_T imaxglwpam [ 3 ] ; real_T
+pqvw0y53rd [ 3 ] ; real_T icv3szrgyv [ 3 ] ; real_T gc2jbymdlz [ 3 ] ; real_T
+f5dkugssxf [ 3 ] ; real_T bolfbkf5bm [ 3 ] ; real_T lfcefqioah [ 3 ] ; real_T
+myuvxki5uz [ 4 ] ; } B ; typedef struct { struct { void * LoggedData ; }
+ht24oybvsi ; int_T dwvympwnqe ; int_T kpaaqs1xgt ; int_T kgvzigyyvz ; int_T
+gvver4kgdc [ 4 ] ; } DW ; typedef struct { real_T jyci2cli0a [ 4 ] ; real_T
+affdlhtmjo [ 3 ] ; real_T olx0irmnay [ 3 ] ; } X ; typedef struct { real_T
+jyci2cli0a [ 4 ] ; real_T affdlhtmjo [ 3 ] ; real_T olx0irmnay [ 3 ] ; } XDot
+; typedef struct { boolean_T jyci2cli0a [ 4 ] ; boolean_T affdlhtmjo [ 3 ] ;
+boolean_T olx0irmnay [ 3 ] ; } XDis ; typedef struct { real_T jyci2cli0a [ 4
+] ; real_T affdlhtmjo [ 3 ] ; real_T olx0irmnay [ 3 ] ; } CStateAbsTol ;
+typedef struct { real_T friquz4qw4 [ 4 ] ; real_T lfel3hyyxk [ 4 ] ; real_T
+mnjyl0hqhi [ 4 ] ; } ZCV ; typedef struct { rtwCAPI_ModelMappingInfo mmi ; }
+DataMapInfo ; struct P_ { real_T speeds_Value [ 4 ] ; real_T
 Integrator2_UpperSat ; real_T Integrator2_LowerSat ; real_T
-eachwheelInertia_Value ; real_T disturbTorques_Value [ 3 ] ; real_T
-magTorq_Value ; } ; extern const char * RT_MEMORY_ALLOCATION_ERROR ; extern B
-rtB ; extern X rtX ; extern DW rtDW ; extern P rtP ; extern const
+pitchrollyawdesired_Value [ 3 ] ; real_T pitchrollyawInitial_Value [ 3 ] ;
+real_T eachwheelInertia_Value ; real_T initialOmega_Value [ 3 ] ; real_T
+zerodisrturbance_Value [ 3 ] ; real_T magTorq_Value ; real_T radToDeg_Value ;
+} ; extern const char * RT_MEMORY_ALLOCATION_ERROR ; extern B rtB ; extern X
+rtX ; extern DW rtDW ; extern P rtP ; extern const
 rtwCAPI_ModelMappingStaticInfo * mainModel_matlab2013a_GetCAPIStaticMap (
 void ) ; extern SimStruct * const rtS ; extern const int_T gblNumToFiles ;
 extern const int_T gblNumFrFiles ; extern const int_T gblNumFrWksBlocks ;

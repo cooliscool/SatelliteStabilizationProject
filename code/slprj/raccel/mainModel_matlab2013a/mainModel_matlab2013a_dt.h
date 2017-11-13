@@ -8,10 +8,10 @@ action_T ) , 2 * sizeof ( uint32_T ) } ; static const char_T *
 rtDataTypeNames [ ] = { "real_T" , "real32_T" , "int8_T" , "uint8_T" ,
 "int16_T" , "uint16_T" , "int32_T" , "uint32_T" , "boolean_T" , "fcn_call_T"
 , "int_T" , "pointer_T" , "action_T" , "timer_uint32_pair_T" } ; static
-DataTypeTransition rtBTransitions [ ] = { { ( char_T * ) ( & rtB . imaxglwpam
-[ 0 ] ) , 0 , 0 , 23 } , { ( char_T * ) ( & rtDW . ht24oybvsi . LoggedData )
-, 11 , 0 , 1 } , { ( char_T * ) ( & rtDW . kpaaqs1xgt ) , 10 , 0 , 7 } } ;
+DataTypeTransition rtBTransitions [ ] = { { ( char_T * ) ( & rtB . lsvistcdke
+[ 0 ] ) , 0 , 0 , 29 } , { ( char_T * ) ( & rtDW . ht24oybvsi . LoggedData )
+, 11 , 0 , 1 } , { ( char_T * ) ( & rtDW . dwvympwnqe ) , 10 , 0 , 7 } } ;
 static DataTypeTransitionTable rtBTransTable = { 3U , rtBTransitions } ;
 static DataTypeTransition rtPTransitions [ ] = { { ( char_T * ) ( & rtP .
-pitchrollyawInitial_Value [ 0 ] ) , 0 , 0 , 20 } } ; static
-DataTypeTransitionTable rtPTransTable = { 1U , rtPTransitions } ;
+speeds_Value [ 0 ] ) , 0 , 0 , 21 } } ; static DataTypeTransitionTable
+rtPTransTable = { 1U , rtPTransitions } ;

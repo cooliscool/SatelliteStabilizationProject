@@ -28,44 +28,48 @@
     ;%
     ;% Auto data (rtP)
     ;%
-      section.nData     = 9;
-      section.data(9)  = dumData; %prealloc
+      section.nData     = 10;
+      section.data(10)  = dumData; %prealloc
       
-	  ;% rtP.pitchrollyawInitial_Value
+	  ;% rtP.speeds_Value
 	  section.data(1).logicalSrcIdx = 0;
 	  section.data(1).dtTransOffset = 0;
 	
-	  ;% rtP.pitchrollyawdesired_Value
-	  section.data(2).logicalSrcIdx = 1;
-	  section.data(2).dtTransOffset = 3;
-	
-	  ;% rtP.initialOmega_Value
-	  section.data(3).logicalSrcIdx = 2;
-	  section.data(3).dtTransOffset = 6;
-	
-	  ;% rtP.speeds_Value
-	  section.data(4).logicalSrcIdx = 3;
-	  section.data(4).dtTransOffset = 9;
-	
 	  ;% rtP.Integrator2_UpperSat
-	  section.data(5).logicalSrcIdx = 4;
-	  section.data(5).dtTransOffset = 13;
+	  section.data(2).logicalSrcIdx = 1;
+	  section.data(2).dtTransOffset = 4;
 	
 	  ;% rtP.Integrator2_LowerSat
-	  section.data(6).logicalSrcIdx = 5;
-	  section.data(6).dtTransOffset = 14;
+	  section.data(3).logicalSrcIdx = 2;
+	  section.data(3).dtTransOffset = 5;
+	
+	  ;% rtP.pitchrollyawdesired_Value
+	  section.data(4).logicalSrcIdx = 3;
+	  section.data(4).dtTransOffset = 6;
+	
+	  ;% rtP.pitchrollyawInitial_Value
+	  section.data(5).logicalSrcIdx = 4;
+	  section.data(5).dtTransOffset = 9;
 	
 	  ;% rtP.eachwheelInertia_Value
-	  section.data(7).logicalSrcIdx = 6;
-	  section.data(7).dtTransOffset = 15;
+	  section.data(6).logicalSrcIdx = 5;
+	  section.data(6).dtTransOffset = 12;
 	
-	  ;% rtP.disturbTorques_Value
+	  ;% rtP.initialOmega_Value
+	  section.data(7).logicalSrcIdx = 6;
+	  section.data(7).dtTransOffset = 13;
+	
+	  ;% rtP.zerodisrturbance_Value
 	  section.data(8).logicalSrcIdx = 7;
 	  section.data(8).dtTransOffset = 16;
 	
 	  ;% rtP.magTorq_Value
 	  section.data(9).logicalSrcIdx = 8;
 	  section.data(9).dtTransOffset = 19;
+	
+	  ;% rtP.radToDeg_Value
+	  section.data(10).logicalSrcIdx = 9;
+	  section.data(10).dtTransOffset = 20;
 	
       nTotData = nTotData + section.nData;
       paramMap.sections(1) = section;
@@ -112,36 +116,44 @@
     ;%
     ;% Auto data (rtB)
     ;%
-      section.nData     = 7;
-      section.data(7)  = dumData; %prealloc
+      section.nData     = 9;
+      section.data(9)  = dumData; %prealloc
       
-	  ;% rtB.imaxglwpam
+	  ;% rtB.lsvistcdke
 	  section.data(1).logicalSrcIdx = 0;
 	  section.data(1).dtTransOffset = 0;
 	
-	  ;% rtB.nndjph3uih
+	  ;% rtB.imaxglwpam
 	  section.data(2).logicalSrcIdx = 1;
-	  section.data(2).dtTransOffset = 3;
+	  section.data(2).dtTransOffset = 4;
 	
 	  ;% rtB.pqvw0y53rd
 	  section.data(3).logicalSrcIdx = 2;
-	  section.data(3).dtTransOffset = 6;
+	  section.data(3).dtTransOffset = 7;
 	
-	  ;% rtB.lsvistcdke
+	  ;% rtB.icv3szrgyv
 	  section.data(4).logicalSrcIdx = 3;
-	  section.data(4).dtTransOffset = 9;
+	  section.data(4).dtTransOffset = 10;
 	
-	  ;% rtB.f5dkugssxf
+	  ;% rtB.gc2jbymdlz
 	  section.data(5).logicalSrcIdx = 4;
 	  section.data(5).dtTransOffset = 13;
 	
-	  ;% rtB.bolfbkf5bm
+	  ;% rtB.f5dkugssxf
 	  section.data(6).logicalSrcIdx = 5;
 	  section.data(6).dtTransOffset = 16;
 	
-	  ;% rtB.myuvxki5uz
+	  ;% rtB.bolfbkf5bm
 	  section.data(7).logicalSrcIdx = 6;
 	  section.data(7).dtTransOffset = 19;
+	
+	  ;% rtB.lfcefqioah
+	  section.data(8).logicalSrcIdx = 7;
+	  section.data(8).dtTransOffset = 22;
+	
+	  ;% rtB.myuvxki5uz
+	  section.data(9).logicalSrcIdx = 8;
+	  section.data(9).dtTransOffset = 25;
 	
       nTotData = nTotData + section.nData;
       sigMap.sections(1) = section;
@@ -202,15 +214,15 @@
       section.nData     = 4;
       section.data(4)  = dumData; %prealloc
       
-	  ;% rtDW.kpaaqs1xgt
+	  ;% rtDW.dwvympwnqe
 	  section.data(1).logicalSrcIdx = 1;
 	  section.data(1).dtTransOffset = 0;
 	
-	  ;% rtDW.kgvzigyyvz
+	  ;% rtDW.kpaaqs1xgt
 	  section.data(2).logicalSrcIdx = 2;
 	  section.data(2).dtTransOffset = 1;
 	
-	  ;% rtDW.dwvympwnqe
+	  ;% rtDW.kgvzigyyvz
 	  section.data(3).logicalSrcIdx = 3;
 	  section.data(3).dtTransOffset = 2;
 	
@@ -248,8 +260,8 @@
   ;%
 
 
-  targMap.checksum0 = 252004669;
-  targMap.checksum1 = 3808634814;
-  targMap.checksum2 = 849449876;
-  targMap.checksum3 = 1748155767;
+  targMap.checksum0 = 4043247365;
+  targMap.checksum1 = 3255279474;
+  targMap.checksum2 = 689865706;
+  targMap.checksum3 = 4166392582;
 
