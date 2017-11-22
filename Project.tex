@@ -5,7 +5,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{float}
-\author{Group 5:\\Manoj Velmurugan,AE14B013,\\Mohamed Khalid, AE13B013,\\Radhakrishnan B, AE14B024,\\Ajmal, AE14B0 ,\\G.D.Sunil,AE13B049 }
+\author{Group 5:\\Manoj Velmurugan,AE14B013,\\Mohamed Khalid, AE13B013,\\Radhakrishnan B, AE14B024,\\Mohamed Ajmal, AE14B043,\\G.D.Sunil,AE13B049 }
 \title{Spacecraft dynamics project to design a zero momentum biased satellite.}
 \begin{document}
 \maketitle
@@ -64,13 +64,29 @@ Also compare strategy and time responses for tetrahedron and Pyramid configurati
 \part{Kinematics of spacecraft}
 The kinematics for the spacecraft is modelled using Euler angles since the spacecraft is expected to operate within small ranges of Euler angles and it is easier to model the desired orientation using the Euler angles convention.
 \\ \\
-The Dynamical Equations of motion for the spacecraft are given as follows\\
+The Dynamical Equations of motion for the spacecraft are given as follows.\\
 \begin{equation}
 I\dot{\omega_{b}}+\left(\omega_{b}-C_{b0}\begin{bmatrix}
 0\\0\\\omega_{0}
 \end{bmatrix}\right)\times(I\left(\omega_{b}-C_{b0}\begin{bmatrix}
 0\\0\\\omega_{0}
-\end{bmatrix}\right)
+\end{bmatrix}\right)=T_{disturbance}+T_{magnetic}-T_{RW}
 \end{equation}
 
+Where T represents Torque and $ T_{magnetic} $ represents torque by magnetic torquers due to momentum dumping and $ T_{RW} $ represents torque due to reaction wheels.
+\\
+\\
+For reaction wheels, the net torque due to the wheels come out as,
+\begin{equation}
+T_{RW}=I_{w}\begin{bmatrix}
+\dot{\omega_{1}}-\frac{\omega_{4}}{\sqrt{3}}\\
+\dot{\omega_{2}}-\frac{\omega_{4}}{\sqrt{3}}\\
+\dot{\omega_{3}}-\frac{\omega_{4}}{\sqrt{3}}
+\end{bmatrix}
++I_{w}\begin{bmatrix}
+\omega_{3}\omega_{by}-\omega_{2}\omega_{bz}\\
+\omega_{1}\omega_{bz}-\omega_{3}\omega_{bx}\\
+\omega_{2}\omega_{bx}-\omega_{1}\omega_{by}
+\end{bmatrix}
+\end{equation}
 \end{document}
