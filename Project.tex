@@ -68,7 +68,7 @@ The Dynamical Equations of motion for the spacecraft are given as follows.\\
 \begin{equation}
 I\dot{\omega_{b}}+\left(\omega_{b}-C_{b0}\begin{bmatrix}
 0\\0\\\omega_{0}
-\end{bmatrix}\right)\times(I\left(\omega_{b}-C_{b0}\begin{bmatrix}
+\end{bmatrix}\right)\times I\left(\omega_{b}-C_{b0}\begin{bmatrix}
 0\\0\\\omega_{0}
 \end{bmatrix}\right)=T_{disturbance}+T_{magnetic}-T_{RW}
 \end{equation}
@@ -89,5 +89,38 @@ T_{RW}=I_{w}\begin{bmatrix}
 \omega_{2}\omega_{bx}-\omega_{1}\omega_{by}
 \end{bmatrix}
 \end{equation}
-Where,
+Where, $ \omega_{b} $ is given by,\\
+$
+\omega_{b} =\begin{bmatrix}
+-sin(r) & 0 & 1\\
+cos(r) sin(y)&cos(y)&0\\
+cos(r) cos(y)&-sin(y)&0
+\end{bmatrix}
+$ $
+\begin{bmatrix}
+\dot{p}\\ \dot{r} \\ \dot{y}
+\end{bmatrix}
+ $\\ \\
+where [$\textbf{x}$,$\textbf{y}$,$\textbf{z}$]  correspond to the yaw(y), roll(r) and pitch(p) axes respectively and $ C_{b0} $ corresponds to the rotation matrix by,
+\begin{equation}
+C_{b0}=C_{x}(p)C_{y}(r)C_{z}(y)
+\end{equation}
+by the 3-2-1 rotation convention.
+\newpage
+The gravity gradient torque is given by,
+\begin{equation}
+T_{g}=\frac{3\mu}{r^{5}}r_{b}^{\times}Ir_{b}
+\end{equation}
+This is accounted for in the disturbance torque.
+\\ \\The magnetic torque is based on a magnetic dipole system model of the earth where the satellite is in orbit about. Hence, for any point in the orbit, the magnetic field around the satellite can be easily found using the model and assuming that the dipole is aligned at angle of 11$ ^{0} $ wrt earth's true axis, we find the radial and azimuthal fields to be,
+\begin{equation}
+B_{r}=-2B_{0}\left(\frac{R_{E}}{r}\right)^{3}cos(\theta)
+\end{equation}
+\begin{equation}
+B_{\theta}=-B_{0}\left(\frac{R_{E}}{r}\right)^{3}sin(\theta)
+\end{equation}
+\begin{equation}
+|B|=B_{0}\left(\frac{R_{E}}{r}\right)^{3}\sqrt{1+3cos^{2}(\theta)}
+\end{equation}
+where, $ R_{E} $ is the mean radius of the earth, $ \theta $ is the azimuth from the north magnetic pole,r is the distance from earth's center and $B_{0}=3.12\times10^{-5}T$. There is no need to consider solar wind effects since the satellite OCEANSAT revolves closely about earth.
 \end{document}
