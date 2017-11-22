@@ -70,7 +70,7 @@ I\dot{\omega_{b}}+\left(\omega_{b}-C_{b0}\begin{bmatrix}
 0\\0\\\omega_{0}
 \end{bmatrix}\right)\times I\left(\omega_{b}-C_{b0}\begin{bmatrix}
 0\\0\\\omega_{0}
-\end{bmatrix}\right)=T_{disturbance}+T_{magnetic}-T_{RW}
+\end{bmatrix}\right)=T_{disturbance}+T_{magnetic}-T_{RW}+T_{g}
 \end{equation}
 
 Where T represents Torque and $ T_{magnetic} $ represents torque by magnetic torquers due to momentum dumping and $ T_{RW} $ represents torque due to reaction wheels.
@@ -103,15 +103,17 @@ $ $
  $\\ \\
 where [$\textbf{x}$,$\textbf{y}$,$\textbf{z}$]  correspond to the yaw(y), roll(r) and pitch(p) axes respectively and $ C_{b0} $ corresponds to the rotation matrix by,
 \begin{equation}
-C_{b0}=C_{x}(p)C_{y}(r)C_{z}(y)
+C_{b0}=C_{x}(y)C_{y}(r)C_{z}(p)
 \end{equation}
 by the 3-2-1 rotation convention.
 \newpage
 The gravity gradient torque is given by,
 \begin{equation}
-T_{g}=\frac{3\mu}{r^{5}}r_{b}^{\times}Ir_{b}
+T_{g}=\frac{3\mu}{r^{5}}r_{b}^{\times}Ir_{b}=3\omega_{0}^{2}\begin{bmatrix}
+(I_{z}-I_{y})y\\(I_{z}-I_{x})r \\0
+\end{bmatrix}
 \end{equation}
-This is accounted for in the disturbance torque.
+Where $ \omega_{0} =\sqrt{\frac{\mu}{R_{0}^{3}}}$.
 \\ \\The magnetic torque is based on a magnetic dipole system model of the earth where the satellite is in orbit about. Hence, for any point in the orbit, the magnetic field around the satellite can be easily found using the model and assuming that the dipole is aligned at angle of 11$ ^{0} $ wrt earth's true axis, we find the radial and azimuthal fields to be,
 \begin{equation}
 B_{r}=-2B_{0}\left(\frac{R_{E}}{r}\right)^{3}cos(\theta)
@@ -123,4 +125,34 @@ B_{\theta}=-B_{0}\left(\frac{R_{E}}{r}\right)^{3}sin(\theta)
 |B|=B_{0}\left(\frac{R_{E}}{r}\right)^{3}\sqrt{1+3cos^{2}(\theta)}
 \end{equation}
 where, $ R_{E} $ is the mean radius of the earth, $ \theta $ is the azimuth from the north magnetic pole,r is the distance from earth's center and $B_{0}=3.12\times10^{-5}T$. There is no need to consider solar wind effects since the satellite OCEANSAT revolves closely about earth.
+\chapter{Stability analysis}
+Deriving the equations of motion, we get (The equations of motion remain same, but [$I_{x},I_{y},I_{z}$] of new frame become [$I_{y},I_{z},I_{x}$] of old frame.\\
+Hence, the equations for stability come out to be,
+\begin{equation}
+I_{y}\ddot{r}-[I_{y}-I_{z}+I_{x}]\omega_{0}\dot{y}+4\omega_{0}^{2}(I_{z}-I_{x})r=0
+\end{equation}
+\begin{equation}
+I_{z}\ddot{p}+3\omega_{0}^{2}(I_{y}-I_{x})p=0
+\end{equation}
+\begin{equation}
+I_{x}\ddot{y}-[I_{y}-I_{z}+I_{x}]\omega_{0}\dot{r}+\omega_{0}^{2}(I_{z}-I_{x})r=0
+\end{equation}
+
+\section{Stability of pitch motion}
+For stability of pitch, which has the form,
+\begin{equation}
+\ddot{p}+\alpha p=0
+\end{equation}
+$ \alpha>0 $ and hence $ I_{y}>I_{x} $. This is not true and hence the satellite is pitch unstable.
+\section{Roll and yaw unstability}
+In similar fashion, we see that if $ I_{z}>I_{x},I_{y} $, roll yaw is stable. However, by given info, the roll yaw is unstable. Hence, the satellite is gravity gradient unstable. 
+\section{Need for active control}
+The active control system is needed because of the unstable roll yaw motion and pitch motion. Momentum dumping by magnetic torquers may be required.
+\chapter{PID controller}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{Untitled1.png}
+\caption{PID model}
+\end{figure}
+
 \end{document}
