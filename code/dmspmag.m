@@ -184,7 +184,8 @@ end
 % compute Legendre derivatives with finite differences
 function [dp] = legendre_deriv(n, x)
     h = 1.0e-8;
-    pp = legendre(n, x+0.5*h, 'sch');
-    pm = legendre(n, x-0.5*h, 'sch');
+    
+    pp = legendre(n, x+0.5*h - 0.00000001, 'sch');
+    pm = legendre(n, x-0.5*h - 0.00000001, 'sch');
     dp = (pp - pm) / h;
 end

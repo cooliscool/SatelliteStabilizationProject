@@ -17,8 +17,7 @@ for theta = 0:1:360
     longtitude = acos(rr(1)/(rr(1)^2 + rr(2)^2) );
     latitude = acos(rr(3)/norm(rr));
     altitude = norm(rr)- Re; 
-    mag_field = dmspmag(altitude/1000,latitude*180/pi,longtitude*180/pi, 2000, 0);
-    plot(theta, mag_field, '.');
+    plot(theta, dmspmag(altitudelongtitude*180/pi), '.');
 end
 
 
