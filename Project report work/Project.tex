@@ -5,8 +5,8 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{float}
-\author{Group 5:\\Manoj Velmurugan,AE14B013,\\Mohamed Khalid, AE13B013,\\Radhakrishnan B, AE14B024,\\Mohamed Ajmal, AE14B043,\\G.D.Sunil,AE13B049 }
-\title{Spacecraft dynamics project to design a zero momentum biased satellite.}
+\author{Group 5:\\Mohamed Khalid, AE13B013,\\G.D.Sunil,AE13B049,\\Manoj Velmurugan,AE14B013,\\Radhakrishnan B, AE14B024,\\Mohamed Ajmal, AE14B043 }
+\title{Spacecraft dynamics project: Controller design for Zero momentum biased Satellite-Oceansat.}
 \begin{document}
 \maketitle
 \tableofcontents
@@ -37,7 +37,7 @@ of 0.005 deg about all axes (for zero-momentum biased system).
 Oceansat-1 is a 3-axis stabilized earth pointing satellite with a 4-wheel configuration which is traditional. That is the wheel configuration is with a wheel about each principal axis and the 4th wheel is mounted with 54.7 deg with respect to all three wheels. Nominally the principal axis wheels are rotated with 1000 rpm and the redundant wheel is rotated with -1732 rpm so that zero-momentum is achieved.
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{untitled.png}
+
 \caption{Configuration of wheels}
 \end{figure}
 The momentum dumping is achieved by using 60 Am$ ^{2} $ torque rods about all the three axes. Actual MI properties of the s/c after deployment are,
@@ -61,22 +61,36 @@ Also compare strategy and time responses for tetrahedron and Pyramid configurati
 \includegraphics[scale=0.5]{image_gallery.png}
 \caption{Ocean Sat}
 \end{figure}
-\chapter{Kinematics of spacecraft}
-The kinematics for the spacecraft is modelled using Euler angles since the spacecraft is expected to operate within small ranges of Euler angles and it is easier to model the desired orientation using the Euler angles convention.
+\chapter{Dynamic Model of spacecraft}
+The dynamics for the spacecraft is modelled using Euler angles since the spacecraft is expected to operate within small ranges of Euler angles(Earth pointing satellite) and it is easier to design controller for euler angles.\\ \\
+\textbf{Coordinate system} used(as given in the question):\\
+Z axis-Pitch\\
+Y axis-Roll\\
+X axis-Yaw\\
+Order of rotation is 3-2-1(z-y-x)\\
+where,\\
+yaw axis points towards Earth. Roll angle is in the direction of motion of the satellite and pitch axis as per right hand coordinate system.
 \\ \\
-The Dynamical Equations of motion for the spacecraft are given as follows.\\
+The \textbf{Dynamics Equations} of motion for the spacecraft are given as follows.\\
 \begin{equation}
-I\dot{\omega_{b}}+\left(\omega_{b}-C_{b0}\begin{bmatrix}
-0\\0\\\omega_{0}
-\end{bmatrix}\right)\times I\left(\omega_{b}-C_{b0}\begin{bmatrix}
-0\\0\\\omega_{0}
-\end{bmatrix}\right)=T_{disturbance}+T_{magnetic}-T_{RW}+T_{g}
+I\dot{\omega}+\omega\times I(\omega)=T_{disturbance}+T_{magnetic}-T_{RW}+T_{g}
 \end{equation}
 
-Where T represents Torque and $ T_{magnetic} $ represents torque by magnetic torquers due to momentum dumping and $ T_{RW} $ represents torque due to reaction wheels.
-\\
-\\
-For reaction wheels, the net torque due to the wheels come out as,
+\begin{equation}
+\omega=\left(\omega_{b}-C_{b0}\begin{bmatrix}
+0\\0\\\omega_{0}
+\end{bmatrix}\right)
+\end{equation}
+Where,\\
+	$ T_{magnetic} $ represents torque by magnetic torquers due to momentum dumping \\
+	$ T_{RW} $ represents torque due to reaction wheels.\\
+	$ T_{g} $ represents torque due to gravity gradient.\\
+	$ \omega $ represents angular velocity of satellite wrt inertially fixed frame and written in body frame.\\
+	$ \omega_b $ represents angular velocity of satellite wrt orbit and written/represented in body frame.
+
+\section{Reaction wheel Torque:}
+\subsection{Traditional Configuration:}
+For reaction wheels in Traditional configuration, the net torque due to the wheels come out as,
 \begin{equation}
 T_{RW}=I_{w}\begin{bmatrix}
 \dot{\omega_{1}}-\frac{\omega_{4}}{\sqrt{3}}\\
@@ -89,7 +103,9 @@ T_{RW}=I_{w}\begin{bmatrix}
 \omega_{2}\omega_{bx}-\omega_{1}\omega_{by}
 \end{bmatrix}
 \end{equation}
-Where, $ \omega_{b} $ is given by,\\
+Where, \\
+$\omega_{i}-$angular velocity of wheels wrt to the satellite. In normal operation all $\omega_{i}$ will be positive. Sign convention is taken so. \\
+$ \omega_{b}- $(angular velocity of satellite body wrt orbit) is given by,\\
 $
 \omega_{b} =\begin{bmatrix}
 -sin(r) & 0 & 1\\
@@ -107,14 +123,19 @@ C_{b0}=C_{x}(y)C_{y}(r)C_{z}(p)
 \end{equation}
 by the 3-2-1 rotation convention.
 \newpage
+\textbf{Note:} Second term of the reaction wheel torque will be small during operation(zero initially when rpms are 1000,1000,1000,1732). So it is only used in the simulink simulation and not in the controller design.
+\subsection{Tetrahedron Configuration:}
+\section{Gravity Gradient Torque:}
 The gravity gradient torque is given by,
-\begin{equation}
-T_{g}=\frac{3\mu}{r^{5}}r_{b}^{\times}Ir_{b}=3\omega_{0}^{2}\begin{bmatrix}
-(I_{z}-I_{y})y\\(I_{z}-I_{x})r \\0
-\end{bmatrix}
-\end{equation}
-Where $ \omega_{0} =\sqrt{\frac{\mu}{R_{0}^{3}}}$.
-\\ \\The magnetic torque is based on a magnetic dipole system model of the earth where the satellite is in orbit about. Hence, for any point in the orbit, the magnetic field around the satellite can be easily found using the model and assuming that the dipole is aligned at angle of 11$ ^{0} $ wrt earth's true axis, we find the radial and azimuthal fields to be,
+	\begin{equation}
+	T_{g}=\frac{3\mu}{r^{5}}r_{b}^{\times}Ir_{b}=3\omega_{0}^{2}\begin{bmatrix}
+	(I_{z}-I_{y})y\\(I_{z}-I_{x})r \\0
+	\end{bmatrix}
+	\end{equation}
+	Where $ \omega_{0} =\sqrt{\frac{\mu}{R_{0}^{3}}}$.\\
+This torque is only used in the final simulation of satellite with the controller and not used in the design of controller.
+\section{Magnetic Torque}
+The magnetic torque is based on a magnetic dipole system model of the earth where the satellite is in orbit about. Hence, for any point in the orbit, the magnetic field around the satellite can be easily found using the model and assuming that the dipole is aligned at angle of 11$ ^{0} $ wrt earth's true axis, we find the radial and azimuthal fields to be,
 \begin{equation}
 B_{r}=-2B_{0}\left(\frac{R_{E}}{r}\right)^{3}cos(\theta)
 \end{equation}
@@ -147,12 +168,15 @@ $ \alpha>0 $ and hence $ I_{y}>I_{x} $. This is not true and hence the satellite
 \section{Roll and yaw unstability}
 In similar fashion, we see that if $ I_{z}>I_{x},I_{y} $, roll yaw is stable. However, by given info, the roll yaw is unstable. Hence, the satellite is gravity gradient unstable. 
 \section{Need for active control}
-The active control system is needed because of the unstable roll yaw motion and pitch motion. Momentum dumping by magnetic torquers may be required.
-\chapter{PID controller}
+The active control system is needed because of the unstable roll yaw motion and pitch motion. Because of constant disturbance torque given in the question. Dumping of Momentum gained will be required. This is done using 3 axis torque rods on satellite
+\chapter{Controller design:}
+\section{Linearised Dynamics Equations:}
+\section{Controller Design:}
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.3]{Untitled1.png}
 \caption{PID model}
 \end{figure}
 
+\chapter{Momentum Dumping:}
 \end{document}
