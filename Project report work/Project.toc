@@ -13,3 +13,6 @@
 \contentsline {section}{\numberline {4.1}Linearised Dynamics Equations:}{8}
 \contentsline {section}{\numberline {4.2}Controller Design:}{8}
 \contentsline {chapter}{\numberline {5}Momentum Dumping:}{9}
+\contentsline {chapter}{\numberline {6}Simulation:}{10}
+\contentsline {subsection}{\numberline {6.0.1}simulink Model:}{10}
+\contentsline {subsection}{\numberline {6.0.2}Results:}{10}
