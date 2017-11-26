@@ -1,0 +1,6 @@
+Ixx=1800;
+Iyy=1600;
+Izz=1200;
+Ts=500;
+overshoot=5/100;
+zeta=(-log(overshoot)/pi)^2/(1+(-log(overshoot)/pi)^2)

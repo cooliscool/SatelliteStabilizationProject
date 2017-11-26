@@ -88,24 +88,6 @@ Where,\\
 	$ \omega $ represents angular velocity of satellite wrt inertially fixed frame and written in body frame.\\
 	$ \omega_b $ represents angular velocity of satellite wrt orbit and written/represented in body frame.
 
-\section{Reaction wheel Torque:}
-\subsection{Traditional Configuration:}
-For reaction wheels in Traditional configuration, the net torque due to the wheels come out as,
-\begin{equation}
-T_{RW}=I_{w}\begin{bmatrix}
-\dot{\omega_{1}}-\frac{\omega_{4}}{\sqrt{3}}\\
-\dot{\omega_{2}}-\frac{\omega_{4}}{\sqrt{3}}\\
-\dot{\omega_{3}}-\frac{\omega_{4}}{\sqrt{3}}
-\end{bmatrix}
-+I_{w}\begin{bmatrix}
-\omega_{3}\omega_{by}-\omega_{2}\omega_{bz}\\
-\omega_{1}\omega_{bz}-\omega_{3}\omega_{bx}\\
-\omega_{2}\omega_{bx}-\omega_{1}\omega_{by}
-\end{bmatrix}
-\end{equation}
-Where, \\
-$\omega_{i}-$angular velocity of wheels wrt to the satellite. In normal operation all $\omega_{i}$ will be positive. Sign convention is taken so. \\
-$ \omega_{b}- $(angular velocity of satellite body wrt orbit) is given by,\\
 $
 \omega_{b} =\begin{bmatrix}
 -sin(r) & 0 & 1\\
@@ -116,36 +98,62 @@ $ $
 \begin{bmatrix}
 \dot{p}\\ \dot{r} \\ \dot{y}
 \end{bmatrix}
- $\\ \\
+$\\ \\
 where [$\textbf{x}$,$\textbf{y}$,$\textbf{z}$]  correspond to the yaw(y), roll(r) and pitch(p) axes respectively and $ C_{b0} $ corresponds to the rotation matrix by,
 \begin{equation}
 C_{b0}=C_{x}(y)C_{y}(r)C_{z}(p)
 \end{equation}
 by the 3-2-1 rotation convention.
+\section{Reaction wheel Torque:}
+\subsection{Traditional Configuration:}
+For reaction wheels in Traditional configuration, the net torque due to the wheels come out as,
+\begin{equation}
+T_{RW}=I_{w}\begin{bmatrix}
+\dot{\omega_{1}}-\frac{\omega_{4}}{\sqrt{3}}\\
+\dot{\omega_{2}}-\frac{\omega_{4}}{\sqrt{3}}\\
+\dot{\omega_{3}}-\frac{\omega_{4}}{\sqrt{3}}
+\end{bmatrix}
+\end{equation}
+Where, \\
+$\omega_{i}-$angular velocity of wheels wrt to the satellite. In normal operation all $\omega_{i}$ will be positive. Sign convention is taken so. \\
+
 \newpage
-\textbf{Note:} Second term of the reaction wheel torque will be small during operation(zero initially when rpms are 1000,1000,1000,1732). So it is only used in the simulink simulation and not in the controller design.
 \subsection{Tetrahedron Configuration:}
-\section{Gravity Gradient Torque:}
-The gravity gradient torque is given by,
-	\begin{equation}
-	T_{g}=\frac{3\mu}{r^{5}}r_{b}^{\times}Ir_{b}=3\omega_{0}^{2}\begin{bmatrix}
-	(I_{z}-I_{y})y\\(I_{z}-I_{x})r \\0
-	\end{bmatrix}
-	\end{equation}
-	Where $ \omega_{0} =\sqrt{\frac{\mu}{R_{0}^{3}}}$.\\
-This torque is only used in the final simulation of satellite with the controller and not used in the design of controller.
+%\section{Gravity Gradient Torque:}
+%The gravity gradient torque is given by,
+%	\begin{equation}
+%	T_{g}=\frac{3\mu}{r^{5}}r_{b}^{\times}Ir_{b}=3\omega_{0}^{2}\begin{bmatrix}
+%	(I_{z}-I_{y})y\\(I_{z}-I_{x})r \\0
+%	\end{bmatrix}
+%	\end{equation}
+%	Where $ \omega_{0} =\sqrt{\frac{\mu}{R_{0}^{3}}}$.\\
+%This torque is only used in the final simulation of satellite with the controller and not used in the design of controller.
+
 \section{Magnetic Torque}
-The magnetic torque is based on a magnetic dipole system model of the earth where the satellite is in orbit about. Hence, for any point in the orbit, the magnetic field around the satellite can be easily found using the model and assuming that the dipole is aligned at angle of 11$ ^{0} $ wrt earth's true axis, we find the radial and azimuthal fields to be,
+%The magnetic torque is based on a magnetic dipole system model of the earth where the satellite is in orbit about. Hence, for any point in the orbit, the magnetic field around the satellite can be easily found using the model and assuming that the dipole is aligned at angle of 11$ ^{0} $ wrt earth's true axis, we find the radial and azimuthal fields to be,
+%\begin{equation}
+%B_{r}=-2B_{0}\left(\frac{R_{E}}{r}\right)^{3}cos(\theta)
+%\end{equation}
+%\begin{equation}
+%B_{\theta}=-B_{0}\left(\frac{R_{E}}{r}\right)^{3}sin(\theta)
+%\end{equation}
+%\begin{equation}
+%|B|=B_{0}\left(\frac{R_{E}}{r}\right)^{3}\sqrt{1+3cos^{2}(\theta)}
+%\end{equation}
+%where, $ R_{E} $ is the mean radius of the earth, $ \theta $ is the azimuth from the north magnetic pole,r is the distance from earth's center and $B_{0}=3.12\times10^{-5}T$. There is no need to consider solar wind effects since the satellite OCEANSAT revolves closely about earth.
+
+Magnetic torque is given by,
 \begin{equation}
-B_{r}=-2B_{0}\left(\frac{R_{E}}{r}\right)^{3}cos(\theta)
+\tau=M X B
 \end{equation}
-\begin{equation}
-B_{\theta}=-B_{0}\left(\frac{R_{E}}{r}\right)^{3}sin(\theta)
-\end{equation}
-\begin{equation}
-|B|=B_{0}\left(\frac{R_{E}}{r}\right)^{3}\sqrt{1+3cos^{2}(\theta)}
-\end{equation}
-where, $ R_{E} $ is the mean radius of the earth, $ \theta $ is the azimuth from the north magnetic pole,r is the distance from earth's center and $B_{0}=3.12\times10^{-5}T$. There is no need to consider solar wind effects since the satellite OCEANSAT revolves closely about earth.
+where,\\ \\
+B- magnetic field of Earth Represented in body frame. This is obtained using DMSP magnetic model(matlab code given in http://www.geomag.us/models/dmsp.html)\\ 
+M- magnetic dipole moment of 3 coils.
+Coils are assumed to be PWM controlled. So the duty cycle is going to control the resulting magnetic torque on the satellite \\
+M= [dutyCycle1*m; dutyCycle2*m; dutyCycle3*m]\\
+m= $60A/m^2$
+
+
 \chapter{Stability analysis}
 Deriving the equations of motion, we get (The equations of motion remain same, but [$I_{x},I_{y},I_{z}$] of new frame become [$I_{y},I_{z},I_{x}$] of old frame.\\
 Hence, the equations for stability come out to be,
@@ -170,9 +178,128 @@ In similar fashion, we see that if $ I_{z}>I_{x},I_{y} $, roll yaw is stable. Ho
 \section{Need for active control}
 The active control system is needed because of the unstable roll yaw motion and pitch motion. Because of constant disturbance torque given in the question. Dumping of Momentum gained will be required. This is done using 3 axis torque rods on satellite
 \chapter{Controller design:}
-\section{Linearised Dynamics Equations:}
-\section{Controller Design:}
+\section{Simplified equations}
+Linearised Satellite equations are as follows
+\[
+Ixx\ddot{(yaw)}=Tdx-Tcx
+\]
 
+\[
+Iyy\ddot{(roll)}=Tdy-Tcy
+\]
+
+\[
+Izz\ddot{(pitch)}=Tdz-Tcz
+\]
+
+Gravity gradient torque is not included here because it is already
+included in the disturbance torque for design. 
+\[
+Tcx=Kp*e+Kd*\dfrac{de}{dt}+Ki*\int edt
+\]
+
+Converting the equations to Transfer function form, we get,
+
+\[
+e(s)=\frac{Tdx-Ixx*(yaw_{setpoint})*S^{2}}{Ixx*s^{2}+Kd*S+Kp+\frac{Ki}{s}}
+\]
+
+Equations for other axes will be similar only.
+
+\section{Requirements:}
+\begin{itemize}
+	\item Designed controller should work for $Tdx=2*10^{-3}$,$Tdy=10^{-4}$,
+	$Tdz=2*10^{-3}$Nm
+	\item Steady state error<0.005deg
+	\item Max overshoot=5\%
+	\item Settling time(2\%) taken for design=500 secs
+\end{itemize}
+\section{Gain calculations:}
+
+Formulas are derived will be same for all axes. Just moment of inertia
+term will change
+
+\subsection{Routh Criterion:}
+
+\[
+CE=IxxS^{3}+KdS^{2}+KpS+Ki=0
+\]
+
+This gives the following conditions.
+
+\[
+Ki>0
+\]
+
+\[
+Kd>0
+\]
+
+\[
+Ki<\frac{Kd*Kp}{Ixx}
+\]
+
+Since Ki has a destabilizing effect, we will take $Ki=Kd*Kp/Ixx$
+for design
+
+\subsection{Steady State Error Criterion:}
+
+\[
+E_{steady}=lim_{s->0}S*TF*1/S=0
+\]
+
+Because of integral term!!
+
+\subsection{Settling time Criterion:}
+
+Since Ki value is going to be small(Since Ixx is large). We can neglect
+it here.
+
+\[
+2\zeta\omega_{n}=Kd/Ixx
+\]
+
+\[
+\frac{4.4}{\zeta\omega_{n}}=Ts
+\]
+
+This gives us,\textbf{
+	\[
+	Kd=\frac{2*4.4*Ixx}{Ts}
+	\]
+}
+
+\subsection{Max overshoot Criterion:}
+
+
+\[
+e^{-\frac{\pi\zeta}{\sqrt{1-\zeta^{2}}}}=\frac{5}{100}
+\]
+
+\[
+Kp>\frac{Ixx*(4.4)^{2}}{\zeta^{2}Ts^{2}}
+\]
+\section{Gains calculated}
+Thereby we got 3 formulas to calculate Kp, Ki and Kd gains. Kp given
+by this inequality is very low. So Kp=1 is taken as a conservative
+value. However KD and Ki are fixed as per the formulas found.
+\begin{center}
+	$\begin{array}{cccc}
+	Gains & Kp & Ki & Kd\\
+	X & 1 & 0.0088 & 32\\
+	Y & 1 & 0.0088 & 28\\
+	Z & 1 & 0.0088 & 21
+	\end{array}$
+	\par\end{center}
+\section{Validation:}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\linewidth]{simulation_at_constantTOrq_pryangles}
+	\caption{}
+	\label{Constant disturbance torque. Pitch, Roll and yaw angles}
+\end{figure}
+Note: \\Product1 is Pitch, \\Product2 is roll \\ Product3 is yaw angle.
+Setpoint is Zero. This simulation is done with constant disturbance torque on our Nonlinear simulink model to validate the gains.
 \chapter{Momentum Dumping:}
 \chapter{Simulation:}
 \subsection{simulink Model:}

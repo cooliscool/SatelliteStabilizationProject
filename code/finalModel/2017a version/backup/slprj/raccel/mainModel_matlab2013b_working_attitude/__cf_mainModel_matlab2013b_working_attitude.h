@@ -1,0 +1,3 @@
+#ifndef CF_mainModel_matlab2013b_working_attitude_H__
+#define CF_mainModel_matlab2013b_working_attitude_H__
+#endif

@@ -1,0 +1,363 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Ixx\ddot{(yaw)}=Tdx-Tcx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Iyy\ddot{(roll)}=Tdy-Tcy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Izz\ddot{(pitch)}=Tdz-Tcz
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Gravity gradient torque is not included here because it is already included
+ in the disturbance torque for design.
+ 
+\begin_inset Formula 
+\[
+Tcx=Kp*e+Kd*\dfrac{de}{dt}+Ki*\int edt
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Converting the equations to Transfer function form, we get,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+e(s)=\frac{Tdx-Ixx*(yaw_{setpoint})*S^{2}}{Ixx*s^{2}+Kd*S+Kp+\frac{Ki}{s}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Equations for other axes will be similar only.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Requirements:
+\end_layout
+
+\begin_layout Itemize
+Designed controller should work for 
+\begin_inset Formula $Tdx=2*10^{-3}$
+\end_inset
+
+,
+\begin_inset Formula $Tdy=10^{-4}$
+\end_inset
+
+, 
+\begin_inset Formula $Tdz=2*10^{-3}$
+\end_inset
+
+Nm
+\end_layout
+
+\begin_layout Itemize
+Steady state error<0.005deg
+\end_layout
+
+\begin_layout Itemize
+Max overshoot=5%
+\end_layout
+
+\begin_layout Itemize
+Settling time(2%) taken for design=500 secs
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Gain selection:
+\end_layout
+
+\begin_layout Standard
+Formulas are derived will be same for all axes.
+ Just moment of inertia term will change
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Routh Criterion:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+CE=IxxS^{3}+KdS^{2}+KpS+Ki=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This gives the following conditions.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Ki>0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Kd>0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Ki<\frac{Kd*Kp}{Ixx}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since Ki has a destabilizing effect, we will take 
+\begin_inset Formula $Ki=Kd*Kp/Ixx$
+\end_inset
+
+ for design
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Steady State Error Criterion:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E_{steady}=lim_{s->0}S*TF*1/S=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Because of integral term!!
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Settling time Criterion:
+\end_layout
+
+\begin_layout Standard
+Since Ki value is going to be small(Since Ixx is large).
+ We can neglect it here.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+2\zeta\omega_{n}=Kd/Ixx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{4.4}{\zeta\omega_{n}}=Ts
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This gives us,
+\series bold
+
+\begin_inset Formula 
+\[
+Kd=\frac{2*4.4*Ixx}{Ts}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Max overshoot Criterion:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+e^{-\frac{\pi\zeta}{\sqrt{1-\zeta^{2}}}}=\frac{5}{100}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Kp>\frac{Ixx*(4.4)^{2}}{\zeta^{2}Ts^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thereby we got 3 formulas to calculate Kp, Ki and Kd gains.
+ Kp given by this inequality is very low.
+ So Kp=1 is taken as a conservative value.
+ However KD and Ki are fixed as per the formulas found.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\begin{array}{cccc}
+Gains & Kp & Ki & Kd\\
+X & 1 & 0.0088 & 32\\
+Y & 1 & 0.0088 & 28\\
+Z & 1 & 0.0088 & 21
+\end{array}$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
