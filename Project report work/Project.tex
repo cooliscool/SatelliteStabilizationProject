@@ -149,7 +149,7 @@ T_{1}\\T_{2}\\T_{3}\\T_{4}
 \sqrt{3}&\sqrt{3}&\sqrt{3}\\
 -\sqrt{3}&-\sqrt{3}&\sqrt{3}\\
 -\sqrt{3}&\sqrt{3}&-\sqrt{3}\\
--\sqrt{3}&-\sqrt{3}&\sqrt{3}\\
+\sqrt{3}&-\sqrt{3}&-\sqrt{3}\\
 \end{bmatrix}
 T_{RW}
 \end{equation}
@@ -333,8 +333,9 @@ value. However KD and Ki are fixed as per the formulas found.
 \end{figure}
 	Note: \\Product1 is Pitch, \\Product2 is roll \\ Product3 is yaw angle.
 	Setpoint is Zero. \\
-This simulation is done with constant disturbance torque on our Nonlinear simulink model to validate the gains.
+This simulation is done with constant disturbance torque on our Nonlinear simulink model to validate the gains(plot is obtained for traditional configuration of reaction wheels)
 \chapter{Momentum Dumping:}
+
 \chapter{Simulation:}
 \subsection{simulink Model:}
 Since it is easier to visualise the flow of simulation in a graphical environment, simulink is used to simulate the system with controller.

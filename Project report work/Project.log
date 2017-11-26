@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.10.25)  27 NOV 2017 02:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.10.25)  27 NOV 2017 02:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -659,10 +659,10 @@ Chapter 6.
 <Untitled1.png, id=58, 985.43156pt x 443.40656pt>
 File: Untitled1.png Graphic file (type png)
 <use Untitled1.png>
-Package pdftex.def Info: Untitled1.png  used on input line 344. on input line 3
-44.
+Package pdftex.def Info: Untitled1.png  used on input line 345. on input line 3
+45.
 Package pdftex.def Info: Requested size: 295.63174pt x 133.02298pt on input lin
-e 344.
+e 345.
 [12
 
  <./Untitled1.png>] (./Project.aux) ) 
@@ -689,7 +689,7 @@ ts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmsy7.pfb>
-Output written on Project.pdf (13 pages, 385789 bytes).
+Output written on Project.pdf (13 pages, 385856 bytes).
 PDF statistics:
  113 PDF objects out of 1000 (max. 8388607)
  77 compressed objects within 1 object stream

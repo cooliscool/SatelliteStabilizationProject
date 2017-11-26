@@ -1,0 +1,3 @@
+#ifndef CF_mainModel_matlab2013b_working_attitude_Tetrahedral_H__
+#define CF_mainModel_matlab2013b_working_attitude_Tetrahedral_H__
+#endif
