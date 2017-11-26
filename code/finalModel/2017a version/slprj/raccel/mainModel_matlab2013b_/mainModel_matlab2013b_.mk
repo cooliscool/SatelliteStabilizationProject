@@ -185,7 +185,6 @@ ADD_INCLUDES = \
 	-I../../.. \
 	-I$(MATLAB_ROOT)/simulink/include/sf_runtime \
 	-I../../../slprj/raccel/mainModel_matlab2013b_ \
-	-I/home/manoj/gits/SatelliteStabilizationProject/code/finalModel \
 	-I$(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils \
 
 

@@ -79,21 +79,20 @@ TARGET_STRING ( "" ) , 0 , 0 , 2 , 0 , 0 } , { 29 , 0 , TARGET_STRING (
 "mainModel_matlab2013b_/Attitude Controller/PID_3/Sum" ) , TARGET_STRING ( ""
 ) , 0 , 0 , 2 , 0 , 0 } , { 0 , 0 , ( NULL ) , ( NULL ) , 0 , 0 , 0 , 0 , 0 }
 } ; static const rtwCAPI_BlockParameters rtBlockParameters [ ] = { { 30 ,
-TARGET_STRING ( "mainModel_matlab2013b_/each wheel Inertia" ) , TARGET_STRING
-( "Value" ) , 0 , 2 , 0 } , { 31 , TARGET_STRING (
-"mainModel_matlab2013b_/initial Omega" ) , TARGET_STRING ( "Value" ) , 0 , 0
-, 0 } , { 32 , TARGET_STRING ( "mainModel_matlab2013b_/magTorq " ) ,
+TARGET_STRING ( "mainModel_matlab2013b_/disturbTorques" ) , TARGET_STRING (
+"Value" ) , 0 , 0 , 0 } , { 31 , TARGET_STRING (
+"mainModel_matlab2013b_/each wheel Inertia" ) , TARGET_STRING ( "Value" ) , 0
+, 2 , 0 } , { 32 , TARGET_STRING ( "mainModel_matlab2013b_/initial Omega" ) ,
 TARGET_STRING ( "Value" ) , 0 , 0 , 0 } , { 33 , TARGET_STRING (
-"mainModel_matlab2013b_/pitch,roll,yaw Initial" ) , TARGET_STRING ( "Value" )
-, 0 , 0 , 0 } , { 34 , TARGET_STRING (
+"mainModel_matlab2013b_/magTorq " ) , TARGET_STRING ( "Value" ) , 0 , 0 , 0 }
+, { 34 , TARGET_STRING ( "mainModel_matlab2013b_/pitch,roll,yaw Initial" ) ,
+TARGET_STRING ( "Value" ) , 0 , 0 , 0 } , { 35 , TARGET_STRING (
 "mainModel_matlab2013b_/pitch,roll,yaw desired" ) , TARGET_STRING ( "Value" )
-, 0 , 0 , 0 } , { 35 , TARGET_STRING ( "mainModel_matlab2013b_/rad To Deg" )
-, TARGET_STRING ( "Value" ) , 0 , 2 , 0 } , { 36 , TARGET_STRING (
+, 0 , 0 , 0 } , { 36 , TARGET_STRING ( "mainModel_matlab2013b_/rad To Deg" )
+, TARGET_STRING ( "Value" ) , 0 , 2 , 0 } , { 37 , TARGET_STRING (
 "mainModel_matlab2013b_/speeds" ) , TARGET_STRING ( "Value" ) , 0 , 1 , 0 } ,
-{ 37 , TARGET_STRING ( "mainModel_matlab2013b_/zero disrturbance " ) ,
-TARGET_STRING ( "Value" ) , 0 , 0 , 0 } , { 38 , TARGET_STRING (
-"mainModel_matlab2013b_/Integrator2" ) , TARGET_STRING (
-"UpperSaturationLimit" ) , 0 , 2 , 0 } , { 39 , TARGET_STRING (
+{ 38 , TARGET_STRING ( "mainModel_matlab2013b_/Integrator2" ) , TARGET_STRING
+( "UpperSaturationLimit" ) , 0 , 2 , 0 } , { 39 , TARGET_STRING (
 "mainModel_matlab2013b_/Integrator2" ) , TARGET_STRING (
 "LowerSaturationLimit" ) , 0 , 2 , 0 } , { 40 , TARGET_STRING (
 "mainModel_matlab2013b_/Attitude Controller/PID_1/Gain" ) , TARGET_STRING (
@@ -127,23 +126,23 @@ static void * rtDataAddrMap [ ] = { & rtB . dkfmpnas3p [ 0 ] , & rtB .
 nlljjmakob [ 0 ] , & rtB . jqsj3svek0 [ 0 ] , & rtB . k1felwmdht [ 0 ] , &
 rtB . exnul2rleq [ 0 ] , & rtB . adwnxz5ipz [ 0 ] , & rtB . brzszdbn0r [ 0 ]
 , & rtB . dkrturai3y [ 0 ] , & rtB . fh4fxhb3dg [ 0 ] , & rtB . fzngedcyzz [
-0 ] , & rtB . fdz33yjl0b [ 0 ] , & rtB . n0vk5nkgs4 [ 0 ] , & rtB .
+0 ] , & rtB . fdz33yjl0b [ 0 ] , & rtB . pdyphp2e0m [ 0 ] , & rtB .
 mgwbg2t02h , & rtB . hapxy3vao0 , & rtB . hn3ztypum0 , & rtB . dpmunjkbhb , &
 rtB . itn1bkplfv , & rtB . oy1dkzfhxx , & rtB . bxrlwyn0fd , & rtB .
 pw0fmdvka1 , & rtB . c2phj3ex1u , & rtB . mdbqqd0snu , & rtB . bdbf4kguln , &
 rtB . k3akangvw5 , & rtB . hpt1qkyizv , & rtB . cqshzwlwog , & rtB .
 adi0v32ets , & rtB . ftdouwbfxw , & rtB . iqcex3uruq , & rtB . npbvq0qily , &
-rtP . eachwheelInertia_Value , & rtP . initialOmega_Value [ 0 ] , & rtP .
-magTorq_Value [ 0 ] , & rtP . pitchrollyawInitial_Value [ 0 ] , & rtP .
-pitchrollyawdesired_Value [ 0 ] , & rtP . radToDeg_Value , & rtP .
-speeds_Value [ 0 ] , & rtP . zerodisrturbance_Value [ 0 ] , & rtP .
-Integrator2_UpperSat , & rtP . Integrator2_LowerSat , & rtP . Gain_Gain , &
-rtP . Gain1_Gain , & rtP . Gain2_Gain , & rtP . Integrator_IC , & rtP .
-Gain_Gain_j0nwylexu1 , & rtP . Gain1_Gain_jkygvdcm0j , & rtP .
-Gain2_Gain_nggjdhdyc1 , & rtP . Integrator_IC_hsiqnplk4j , & rtP .
-Gain_Gain_hskt0iupyl , & rtP . Gain1_Gain_akkqzazk2e , & rtP .
-Gain2_Gain_cddumad5uc , & rtP . Integrator_IC_it4x1oof30 , } ; static int32_T
-* rtVarDimsAddrMap [ ] = { ( NULL ) } ;
+rtP . disturbTorques_Value [ 0 ] , & rtP . eachwheelInertia_Value , & rtP .
+initialOmega_Value [ 0 ] , & rtP . magTorq_Value [ 0 ] , & rtP .
+pitchrollyawInitial_Value [ 0 ] , & rtP . pitchrollyawdesired_Value [ 0 ] , &
+rtP . radToDeg_Value , & rtP . speeds_Value [ 0 ] , & rtP .
+Integrator2_UpperSat , & rtP . Integrator2_LowerSat , & rtP .
+Gain_Gain_hvers1lhk2 , & rtP . Gain1_Gain_jyeaph4bso , & rtP . Gain2_Gain , &
+rtP . Integrator_IC_mi1nfze151 , & rtP . Gain_Gain_j0nwylexu1 , & rtP .
+Gain1_Gain_jkygvdcm0j , & rtP . Gain2_Gain_nggjdhdyc1 , & rtP .
+Integrator_IC_hsiqnplk4j , & rtP . Gain_Gain , & rtP . Gain1_Gain , & rtP .
+Gain2_Gain_cddumad5uc , & rtP . Integrator_IC , } ; static int32_T *
+rtVarDimsAddrMap [ ] = { ( NULL ) } ;
 #endif
 static TARGET_CONST rtwCAPI_DataTypeMap rtDataTypeMap [ ] = { { "double" ,
 "real_T" , 0 , 0 , sizeof ( real_T ) , SS_DOUBLE , 0 , 0 } } ;
@@ -163,8 +162,8 @@ const void * ) & rtcapiStoredFloats [ 0 ] , 0 , 0 } , { ( NULL ) , ( NULL ) ,
 rtBlockSignals , 30 , ( NULL ) , 0 , ( NULL ) , 0 } , { rtBlockParameters ,
 22 , rtModelParameters , 0 } , { ( NULL ) , 0 } , { rtDataTypeMap ,
 rtDimensionMap , rtFixPtMap , rtElementMap , rtSampleTimeMap ,
-rtDimensionArray } , "float" , { 3010315798U , 143090275U , 1889079806U ,
-572504204U } , ( NULL ) , 0 , 0 } ; const rtwCAPI_ModelMappingStaticInfo *
+rtDimensionArray } , "float" , { 3755142936U , 3743815007U , 1291012381U ,
+1741832553U } , ( NULL ) , 0 , 0 } ; const rtwCAPI_ModelMappingStaticInfo *
 mainModel_matlab2013b__GetCAPIStaticMap ( ) { return & mmiStatic ; }
 #ifndef HOST_CAPI_BUILD
 void mainModel_matlab2013b__InitializeDataMapInfo ( ) { rtwCAPI_SetVersion (

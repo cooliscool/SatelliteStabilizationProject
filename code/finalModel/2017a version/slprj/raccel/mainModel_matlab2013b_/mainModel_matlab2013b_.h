@@ -47,28 +47,28 @@
 #endif
 typedef struct { real_T adwnxz5ipz [ 4 ] ; real_T fh4fxhb3dg [ 4 ] ; real_T
 exnul2rleq [ 3 ] ; real_T dkrturai3y [ 3 ] ; real_T fdz33yjl0b [ 3 ] ; real_T
-hn3ztypum0 ; real_T mgwbg2t02h ; real_T itn1bkplfv ; real_T hapxy3vao0 ;
-real_T oy1dkzfhxx ; real_T c2phj3ex1u ; real_T bxrlwyn0fd ; real_T bdbf4kguln
-; real_T pw0fmdvka1 ; real_T k3akangvw5 ; real_T adi0v32ets ; real_T
-hpt1qkyizv ; real_T iqcex3uruq ; real_T cqshzwlwog ; real_T npbvq0qily ;
-real_T n0vk5nkgs4 [ 4 ] ; real_T k1felwmdht [ 3 ] ; real_T brzszdbn0r [ 3 ] ;
+adi0v32ets ; real_T hpt1qkyizv ; real_T iqcex3uruq ; real_T cqshzwlwog ;
+real_T npbvq0qily ; real_T c2phj3ex1u ; real_T bxrlwyn0fd ; real_T bdbf4kguln
+; real_T pw0fmdvka1 ; real_T k3akangvw5 ; real_T hn3ztypum0 ; real_T
+mgwbg2t02h ; real_T itn1bkplfv ; real_T hapxy3vao0 ; real_T oy1dkzfhxx ;
+real_T pdyphp2e0m [ 4 ] ; real_T k1felwmdht [ 3 ] ; real_T brzszdbn0r [ 3 ] ;
 real_T fzngedcyzz [ 3 ] ; real_T dpmunjkbhb ; real_T mdbqqd0snu ; real_T
 ftdouwbfxw ; real_T jqsj3svek0 [ 3 ] ; real_T nlljjmakob [ 3 ] ; real_T
-dkfmpnas3p [ 3 ] ; } B ; typedef struct { real_T ak5rdpmsmz ; real_T
-foqrciusel ; real_T c3ktouvv30 ; real_T goyla3ngee ; real_T jj2dwxwohg ;
-real_T fxofrcfu4n ; real_T eealhk5q4c ; real_T mrsbfmqp2d ; real_T mruqdd4fxa
-; real_T cg1m0nct3u ; real_T en5yifcisr ; real_T eivvrtbw1v ; struct { void *
+dkfmpnas3p [ 3 ] ; } B ; typedef struct { real_T mruqdd4fxa ; real_T
+cg1m0nct3u ; real_T en5yifcisr ; real_T eivvrtbw1v ; real_T jj2dwxwohg ;
+real_T fxofrcfu4n ; real_T eealhk5q4c ; real_T mrsbfmqp2d ; real_T ak5rdpmsmz
+; real_T foqrciusel ; real_T c3ktouvv30 ; real_T goyla3ngee ; struct { void *
 LoggedData ; } nqjhe3jygt ; int_T ijwm01234w ; int_T j3qdiyfhss ; int_T
 dw32h4dvva ; int_T dqo0xdescv [ 4 ] ; } DW ; typedef struct { real_T
-na0kwbhiuw [ 4 ] ; real_T kmrvp24iak [ 3 ] ; real_T blaoeqyfri ; real_T
-eefvuab0yx ; real_T awawpknawq ; real_T mz0jfaypkk [ 3 ] ; } X ; typedef
+na0kwbhiuw [ 4 ] ; real_T kmrvp24iak [ 3 ] ; real_T awawpknawq ; real_T
+eefvuab0yx ; real_T blaoeqyfri ; real_T mz0jfaypkk [ 3 ] ; } X ; typedef
 struct { real_T na0kwbhiuw [ 4 ] ; real_T kmrvp24iak [ 3 ] ; real_T
-blaoeqyfri ; real_T eefvuab0yx ; real_T awawpknawq ; real_T mz0jfaypkk [ 3 ]
+awawpknawq ; real_T eefvuab0yx ; real_T blaoeqyfri ; real_T mz0jfaypkk [ 3 ]
 ; } XDot ; typedef struct { boolean_T na0kwbhiuw [ 4 ] ; boolean_T kmrvp24iak
-[ 3 ] ; boolean_T blaoeqyfri ; boolean_T eefvuab0yx ; boolean_T awawpknawq ;
+[ 3 ] ; boolean_T awawpknawq ; boolean_T eefvuab0yx ; boolean_T blaoeqyfri ;
 boolean_T mz0jfaypkk [ 3 ] ; } XDis ; typedef struct { real_T na0kwbhiuw [ 4
-] ; real_T kmrvp24iak [ 3 ] ; real_T blaoeqyfri ; real_T eefvuab0yx ; real_T
-awawpknawq ; real_T mz0jfaypkk [ 3 ] ; } CStateAbsTol ; typedef struct {
+] ; real_T kmrvp24iak [ 3 ] ; real_T awawpknawq ; real_T eefvuab0yx ; real_T
+blaoeqyfri ; real_T mz0jfaypkk [ 3 ] ; } CStateAbsTol ; typedef struct {
 real_T b5zblesmzs [ 4 ] ; real_T axdzhvpb2w [ 4 ] ; real_T nuks2zj5bu [ 4 ] ;
 } ZCV ; typedef struct { rtwCAPI_ModelMappingInfo mmi ; } DataMapInfo ;
 struct P_ { real_T speeds_Value [ 4 ] ; real_T Integrator2_UpperSat ; real_T
@@ -76,9 +76,9 @@ Integrator2_LowerSat ; real_T pitchrollyawdesired_Value [ 3 ] ; real_T
 pitchrollyawInitial_Value [ 3 ] ; real_T Gain1_Gain ; real_T Integrator_IC ;
 real_T Gain_Gain ; real_T Gain1_Gain_jkygvdcm0j ; real_T
 Integrator_IC_hsiqnplk4j ; real_T Gain_Gain_j0nwylexu1 ; real_T
-Gain1_Gain_akkqzazk2e ; real_T Integrator_IC_it4x1oof30 ; real_T
-Gain_Gain_hskt0iupyl ; real_T eachwheelInertia_Value ; real_T
-initialOmega_Value [ 3 ] ; real_T zerodisrturbance_Value [ 3 ] ; real_T
+Gain1_Gain_jyeaph4bso ; real_T Integrator_IC_mi1nfze151 ; real_T
+Gain_Gain_hvers1lhk2 ; real_T eachwheelInertia_Value ; real_T
+initialOmega_Value [ 3 ] ; real_T disturbTorques_Value [ 3 ] ; real_T
 magTorq_Value [ 3 ] ; real_T radToDeg_Value ; real_T Gain2_Gain ; real_T
 Gain2_Gain_nggjdhdyc1 ; real_T Gain2_Gain_cddumad5uc ; } ; extern const char
 * RT_MEMORY_ALLOCATION_ERROR ; extern B rtB ; extern X rtX ; extern DW rtDW ;
