@@ -92,9 +92,9 @@ EXTMODE_STATIC_SIZE = 1000000
 
 SOLVER              = 
 SOLVER_TYPE         = VariableStep
-NUMST               = 1
+NUMST               = 2
 TID01EQ             = 0
-NCSTATES            = 13
+NCSTATES            = 14
 MULTITASKING        = 0
 TGT_FCN_LIB         = None
 

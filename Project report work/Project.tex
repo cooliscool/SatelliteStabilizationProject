@@ -346,5 +346,21 @@ It also made the system modular so that people can develop blocks separately and
 \caption{Simulink model}
 \end{figure}
 \subsection{Results:}
+\subsubsection{Power Consumption: Traditional vs tetrahedral}
+In this section. Energy consumed(shaft power based. not electrical power integral) in first 1000 seconds is taken for same gains and compared. Same gains imply same output. however the wheel accelerations wont be same for tetrahedral and traditional case.\\
+$ Power_{shaft}=(Iwheel*Acceleration)*\omega_{wheel} $
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\linewidth]{simulation_at_constantTOrq_pryangles}
+	\caption{}
+	\label{fig:simulationatconstanttorqpryangles}
+\end{figure}
+As expected, the responses for both configurations were same provided the pid gains are not changed.\\
+Energy consumed are as follows,\\
+\begin{itemize}
+	\item Tetrahedral-414 Joules
+	\item Traditional-597.5 Joules
+\end{itemize}
+This shows that traditional configuration is more power hungry. Tetrahedral is the clear winner.
 
 \end{document}
