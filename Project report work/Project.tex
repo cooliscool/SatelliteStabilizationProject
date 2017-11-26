@@ -92,17 +92,46 @@ Where,\\
 \subsection{Traditional Configuration:}
 For reaction wheels in Traditional configuration, the net torque due to the wheels come out as,
 \begin{equation}
-T_{RW}=I_{w}\begin{bmatrix}
-\dot{\omega_{1}}-\frac{\omega_{4}}{\sqrt{3}}\\
-\dot{\omega_{2}}-\frac{\omega_{4}}{\sqrt{3}}\\
-\dot{\omega_{3}}-\frac{\omega_{4}}{\sqrt{3}}
+T_{RW}=\begin{bmatrix}
+1& 0 &0 &\frac{-1}{\sqrt{3}}\\
+1& 0 &0 &\frac{-1}{\sqrt{3}}\\
+1& 0 &0 &\frac{-1}{\sqrt{3}}\\
+1& 0 &0 &\frac{-1}{\sqrt{3}}\\
 \end{bmatrix}
-+I_{w}\begin{bmatrix}
-\omega_{3}\omega_{by}-\omega_{2}\omega_{bz}\\
-\omega_{1}\omega_{bz}-\omega_{3}\omega_{bx}\\
-\omega_{2}\omega_{bx}-\omega_{1}\omega_{by}
+\begin{bmatrix}
+T_{1}\\T_{2}\\T_{3}\\T_{4}
 \end{bmatrix}
 \end{equation}
+Where, $ T_{i}=I_{w}\dot{\omega_{i}} $ of the $ i^{th} $ wheel, and the fourth wheel is at equal angles to the other three wheels.\\
+
+The distribution matrix obtained by finding inverse relation using the pseudo inverse matrix, where for this case,
+\begin{equation}
+\begin{bmatrix}
+T_{1}\\T_{2}\\T_{3}\\T_{4}
+\end{bmatrix}
+=\frac{1}{2}\begin{bmatrix}
+\frac{5}{3} &-\frac{1}{3} &-\frac{1}{3} \\
+\frac{-1}{3} &\frac{5}{3} & -\frac{1}{3}\\
+\frac{-1}{3} &-\frac{1}{3} &\frac{5}{3} \\
+\frac{-1}{\sqrt{3}} &\frac{-1}{\sqrt{3}} &\frac{-1}{\sqrt{3}} 
+\end{bmatrix}T_{RW}
+\end{equation}
+
+%Not included
+%\begin{equation}
+%T_{RW}=I_{w}\begin{bmatrix}
+%\dot{\omega_{1}}-\frac{\dot{\omega_{4}}}%{\sqrt{3}}\\
+%\dot{\omega_{2}}-\frac{\dot{\omega_{4}}}{\sqrt{3}}\\
+%\dot{\omega_{3}}-\frac{\dot{\omega_{4}}}%{\sqrt{3}}
+%\end{bmatrix}
+%\end{equation}
+%Not to be included
+%+I_{w}\begin{bmatrix}
+%\omega_{3}\omega_{by}-\omega_{2}\omega_{bz}%\\
+%\omega_{1}\omega_{bz}-\omega_{3}\omega_{bx}%\\
+%\omega_{2}\omega_{bx}-\omega_{1}\omega_{by}
+%\end{bmatrix}
+
 Where, \\
 $\omega_{i}-$angular velocity of wheels wrt to the satellite. In normal operation all $\omega_{i}$ will be positive. Sign convention is taken so. \\
 $ \omega_{b}- $(angular velocity of satellite body wrt orbit) is given by,\\
@@ -125,6 +154,40 @@ by the 3-2-1 rotation convention.
 \newpage
 \textbf{Note:} Second term of the reaction wheel torque will be small during operation(zero initially when rpms are 1000,1000,1000,1732). So it is only used in the simulink simulation and not in the controller design.
 \subsection{Tetrahedron Configuration:}
+
+For reaction wheels in the tetrahedral configuration, 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{Tetconfig.png}
+\caption{Zero momentum biased Tetrahedral configuration.}
+\end{figure}
+
+Using the coordinates of each wheel, we get,
+\begin{equation}
+T_{RW}=\begin{bmatrix}
+\frac{1}{\sqrt{3}} &\frac{-1}{\sqrt{3}}&\frac{-1}{\sqrt{3}}&\frac{1}{\sqrt{3}} \\
+\frac{1}{\sqrt{3}} &\frac{-1}{\sqrt{3}}&\frac{1}{\sqrt{3}}&\frac{-1}{\sqrt{3}} \\
+\frac{1}{\sqrt{3}} &\frac{1}{\sqrt{3}}&\frac{-1}{\sqrt{3}}&\frac{-1}{\sqrt{3}} 
+\end{bmatrix}
+\begin{bmatrix}
+T_{1}\\T_{2}\\T_{3}\\T_{4}
+\end{bmatrix}
+\end{equation}
+Where, $ T_{i}=I_{w}\dot{\omega_{i}} $ of the $ i^{th} $ wheel.
+\\The distribution matrix obtained by finding inverse relation using the pseudo inverse matrix.
+\begin{equation}
+\begin{bmatrix}
+T_{1}\\T_{2}\\T_{3}\\T_{4}
+\end{bmatrix}
+=\frac{1}{4}\begin{bmatrix}
+\sqrt{3}&\sqrt{3}&\sqrt{3}\\
+-\sqrt{3}&-\sqrt{3}&\sqrt{3}\\
+-\sqrt{3}&\sqrt{3}&-\sqrt{3}\\
+-\sqrt{3}&-\sqrt{3}&\sqrt{3}\\
+\end{bmatrix}
+T_{RW}
+\end{equation}
+
 \section{Gravity Gradient Torque:}
 The gravity gradient torque is given by,
 	\begin{equation}
