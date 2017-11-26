@@ -1,6 +1,6 @@
 #include "__cf_mainModel_matlab2013b.h"
-#ifndef _RTW_HEADER_mainModel_matlab2013b_cap_host_h__
-#define _RTW_HEADER_mainModel_matlab2013b_cap_host_h__
+#ifndef RTW_HEADER_mainModel_matlab2013b_cap_host_h_
+#define RTW_HEADER_mainModel_matlab2013b_cap_host_h_
 #ifdef HOST_CAPI_BUILD
 #include "rtw_capi.h"
 #include "rtw_modelmap.h"

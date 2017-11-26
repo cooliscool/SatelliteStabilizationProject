@@ -23,8 +23,8 @@
 static const rtwCAPI_Signals rtBlockSignals [ ] = { { 0 , 2 , TARGET_STRING (
 "mainModel_matlab2013b/ReactionWheels" ) , TARGET_STRING ( "" ) , 0 , 0 , 0 ,
 0 , 0 } , { 1 , 3 , TARGET_STRING (
-"mainModel_matlab2013b/System (Euler Equation) " ) , TARGET_STRING ( "" ) , 0
-, 0 , 0 , 0 , 0 } , { 2 , 4 , TARGET_STRING (
+"mainModel_matlab2013b/System (Euler Equation) 1" ) , TARGET_STRING ( "" ) ,
+0 , 0 , 0 , 0 , 0 } , { 2 , 4 , TARGET_STRING (
 "mainModel_matlab2013b/omega ->EulerRates" ) , TARGET_STRING ( "" ) , 0 , 0 ,
 0 , 0 , 0 } , { 3 , 0 , TARGET_STRING ( "mainModel_matlab2013b/initial Omega"
 ) , TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 , 1 } , { 4 , 0 , TARGET_STRING (
@@ -101,11 +101,11 @@ TARGET_STRING ( "InitialCondition" ) , 0 , 2 , 0 } , { 0 , ( NULL ) , ( NULL
 ) , 0 , 0 , 0 } } ; static const rtwCAPI_ModelParameters rtModelParameters [
 ] = { { 0 , ( NULL ) , 0 , 0 , 0 } } ;
 #ifndef HOST_CAPI_BUILD
-static void * rtDataAddrMap [ ] = { & rtB . kpagd5p4kf [ 0 ] , & rtB .
-k0rntabv5l [ 0 ] , & rtB . iaj5fdksww [ 0 ] , & rtB . hvqlinfhmr [ 0 ] , &
+static void * rtDataAddrMap [ ] = { & rtB . d3fqmonb1x [ 0 ] , & rtB .
+cekbbs35ko [ 0 ] , & rtB . p5tu0n4aab [ 0 ] , & rtB . hvqlinfhmr [ 0 ] , &
 rtB . f4cnibc0yp [ 0 ] , & rtB . gu33yk2b0b [ 0 ] , & rtB . eseqxvyzd5 [ 0 ]
 , & rtB . fgsqhcujs1 [ 0 ] , & rtB . dj0rkgtnut [ 0 ] , & rtB . auxcmgkg3f [
-0 ] , & rtB . gql0wk3mwf [ 0 ] , & rtB . iaa2mgugws [ 0 ] , & rtB .
+0 ] , & rtB . gql0wk3mwf [ 0 ] , & rtB . p5xun41kgm [ 0 ] , & rtB .
 c1y3q10fae , & rtB . dobxpgbpqd , & rtB . lhuvpri5ep , & rtB . lphf5r10kk , &
 rtB . cphprmxoop , & rtB . dsjkt0iimr , & rtB . b4fvzvbgxk , & rtP .
 disturbTorques_Value [ 0 ] , & rtP . eachwheelInertia_Value , & rtP .
@@ -138,20 +138,19 @@ const void * ) & rtcapiStoredFloats [ 0 ] , 0 , 0 } , { ( NULL ) , ( NULL ) ,
 rtBlockSignals , 19 , ( NULL ) , 0 , ( NULL ) , 0 } , { rtBlockParameters ,
 24 , rtModelParameters , 0 } , { ( NULL ) , 0 } , { rtDataTypeMap ,
 rtDimensionMap , rtFixPtMap , rtElementMap , rtSampleTimeMap ,
-rtDimensionArray } , "float" , { 2787255435U , 179211211U , 1385148118U ,
-2102439491U } , ( NULL ) , 0 , 0 } ; const rtwCAPI_ModelMappingStaticInfo *
+rtDimensionArray } , "float" , { 706499421U , 63698568U , 3521172471U ,
+1212003295U } , ( NULL ) , 0 , 0 } ; const rtwCAPI_ModelMappingStaticInfo *
 mainModel_matlab2013b_GetCAPIStaticMap ( ) { return & mmiStatic ; }
 #ifndef HOST_CAPI_BUILD
-void mainModel_matlab2013b_InitializeDataMapInfo ( SimStruct * const rtS ) {
-rtwCAPI_SetVersion ( ( * rt_dataMapInfoPtr ) . mmi , 1 ) ;
-rtwCAPI_SetStaticMap ( ( * rt_dataMapInfoPtr ) . mmi , & mmiStatic ) ;
-rtwCAPI_SetLoggingStaticMap ( ( * rt_dataMapInfoPtr ) . mmi , ( NULL ) ) ;
-rtwCAPI_SetDataAddressMap ( ( * rt_dataMapInfoPtr ) . mmi , rtDataAddrMap ) ;
-rtwCAPI_SetVarDimsAddressMap ( ( * rt_dataMapInfoPtr ) . mmi ,
-rtVarDimsAddrMap ) ; rtwCAPI_SetInstanceLoggingInfo ( ( * rt_dataMapInfoPtr )
-. mmi , ( NULL ) ) ; rtwCAPI_SetChildMMIArray ( ( * rt_dataMapInfoPtr ) . mmi
-, ( NULL ) ) ; rtwCAPI_SetChildMMIArrayLen ( ( * rt_dataMapInfoPtr ) . mmi ,
-0 ) ; }
+void mainModel_matlab2013b_InitializeDataMapInfo ( ) { rtwCAPI_SetVersion ( (
+* rt_dataMapInfoPtr ) . mmi , 1 ) ; rtwCAPI_SetStaticMap ( ( *
+rt_dataMapInfoPtr ) . mmi , & mmiStatic ) ; rtwCAPI_SetLoggingStaticMap ( ( *
+rt_dataMapInfoPtr ) . mmi , ( NULL ) ) ; rtwCAPI_SetDataAddressMap ( ( *
+rt_dataMapInfoPtr ) . mmi , rtDataAddrMap ) ; rtwCAPI_SetVarDimsAddressMap (
+( * rt_dataMapInfoPtr ) . mmi , rtVarDimsAddrMap ) ;
+rtwCAPI_SetInstanceLoggingInfo ( ( * rt_dataMapInfoPtr ) . mmi , ( NULL ) ) ;
+rtwCAPI_SetChildMMIArray ( ( * rt_dataMapInfoPtr ) . mmi , ( NULL ) ) ;
+rtwCAPI_SetChildMMIArrayLen ( ( * rt_dataMapInfoPtr ) . mmi , 0 ) ; }
 #else
 #ifdef __cplusplus
 extern "C" {

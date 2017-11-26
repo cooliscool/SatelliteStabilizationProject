@@ -8,10 +8,14 @@
 #define mainModel_matlab2013b_COMMON_INCLUDES_
 #include <stdlib.h>
 #include "rtwtypes.h"
+#include "simtarget/slSimTgtSigstreamRTW.h"
+#include "simtarget/slSimTgtSlioCoreRTW.h"
+#include "simtarget/slSimTgtSlioClientsRTW.h"
 #include "sigstream_rtw.h"
 #include "simstruc.h"
 #include "fixedpoint.h"
 #include "raccel.h"
+#include "slsv_diagnostic_codegen_c_api.h"
 #include "rt_logging.h"
 #include "dt_info.h"
 #include "ext_work.h"
@@ -46,8 +50,8 @@ f4cnibc0yp [ 3 ] ; real_T gql0wk3mwf [ 3 ] ; real_T c1y3q10fae ; real_T
 lhuvpri5ep ; real_T lphf5r10kk ; real_T dsjkt0iimr ; real_T hvqlinfhmr [ 3 ]
 ; real_T fgsqhcujs1 [ 3 ] ; real_T auxcmgkg3f [ 3 ] ; real_T eseqxvyzd5 [ 4 ]
 ; real_T dobxpgbpqd ; real_T cphprmxoop ; real_T b4fvzvbgxk ; real_T
-iaj5fdksww [ 3 ] ; real_T k0rntabv5l [ 3 ] ; real_T kpagd5p4kf [ 3 ] ; real_T
-iaa2mgugws [ 4 ] ; } B ; typedef struct { real_T dpr3vhdeyz ; real_T
+p5tu0n4aab [ 3 ] ; real_T cekbbs35ko [ 3 ] ; real_T d3fqmonb1x [ 3 ] ; real_T
+p5xun41kgm [ 4 ] ; } B ; typedef struct { real_T dpr3vhdeyz ; real_T
 cj43bhsm41 ; real_T p5d5ekcpzh ; real_T mqd11owwhw ; real_T czikc5k5vu ;
 real_T mbydmjewhh ; real_T aojx1pzz3c ; real_T nnctei5jyn ; real_T cnvp0sxujk
 ; real_T aj5m13tdgs ; real_T mi4lsefx2o ; real_T od50nljeou ; struct { void *
@@ -73,9 +77,9 @@ Gain1_Gain_akkqzazk2e ; real_T Integrator_IC_it4x1oof30 ; real_T
 Gain_Gain_hskt0iupyl ; real_T uI1_Gain ; real_T eachwheelInertia_Value ;
 real_T initialOmega_Value [ 3 ] ; real_T disturbTorques_Value [ 3 ] ; real_T
 magTorq_Value ; real_T radToDeg_Value ; real_T uI_Gain ; real_T Gain2_Gain ;
-real_T Gain2_Gain_nggjdhdyc1 ; real_T Gain2_Gain_cddumad5uc ; } ; extern P
-rtP ; extern const char * RT_MEMORY_ALLOCATION_ERROR ; extern B rtB ; extern
-X rtX ; extern DW rtDW ; extern const rtwCAPI_ModelMappingStaticInfo *
+real_T Gain2_Gain_nggjdhdyc1 ; real_T Gain2_Gain_cddumad5uc ; } ; extern
+const char * RT_MEMORY_ALLOCATION_ERROR ; extern B rtB ; extern X rtX ;
+extern DW rtDW ; extern P rtP ; extern const rtwCAPI_ModelMappingStaticInfo *
 mainModel_matlab2013b_GetCAPIStaticMap ( void ) ; extern SimStruct * const
 rtS ; extern const int_T gblNumToFiles ; extern const int_T gblNumFrFiles ;
 extern const int_T gblNumFrWksBlocks ; extern rtInportTUtable *
@@ -84,10 +88,11 @@ int_T gblNumRootInportBlks ; extern const int_T gblNumModelInputs ; extern
 const int_T gblInportDataTypeIdx [ ] ; extern const int_T gblInportDims [ ] ;
 extern const int_T gblInportComplex [ ] ; extern const int_T
 gblInportInterpoFlag [ ] ; extern const int_T gblInportContinuous [ ] ;
-extern const int_T gblParameterTuningTid ; extern DataMapInfo *
-rt_dataMapInfoPtr ; extern rtwCAPI_ModelMappingInfo * rt_modelMapInfoPtr ;
-void MdlOutputs ( int_T tid ) ; void MdlOutputsParameterSampleTime ( int_T
-tid ) ; void MdlUpdate ( int_T tid ) ; void MdlTerminate ( void ) ; void
+extern const int_T gblParameterTuningTid ; extern size_t gblCurrentSFcnIdx ;
+extern size_t * gblChildIdxToInfoIdx ; extern DataMapInfo * rt_dataMapInfoPtr
+; extern rtwCAPI_ModelMappingInfo * rt_modelMapInfoPtr ; void MdlOutputs (
+int_T tid ) ; void MdlOutputsParameterSampleTime ( int_T tid ) ; void
+MdlUpdate ( int_T tid ) ; void MdlTerminate ( void ) ; void
 MdlInitializeSizes ( void ) ; void MdlInitializeSampleTimes ( void ) ;
 SimStruct * raccel_register_model ( void ) ;
 #endif

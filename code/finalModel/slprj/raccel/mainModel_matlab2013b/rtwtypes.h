@@ -1,6 +1,6 @@
 #include "__cf_mainModel_matlab2013b.h"
-#ifndef __RTWTYPES_H__
-#define __RTWTYPES_H__
+#ifndef RTWTYPES_H
+#define RTWTYPES_H
 #include "tmwtypes.h"
 #include "simstruc_types.h"
 #ifndef POINTER_T

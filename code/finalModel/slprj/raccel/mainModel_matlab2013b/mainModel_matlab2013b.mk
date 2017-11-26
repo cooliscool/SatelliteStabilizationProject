@@ -1,4 +1,4 @@
-# Copyright 1994-2013 The MathWorks, Inc.
+# Copyright 1994-2016 The MathWorks, Inc.
 #
 # File    : raccel_unix.tmf   
 #
@@ -40,7 +40,7 @@
 #  BUILD           - Invoke make from the build procedure (yes/no)?
 #  SYS_TARGET_FILE - Name of system target file.
 
-MAKECMD         = /usr/local/MATLAB/R2015b/bin/glnxa64/gmake
+MAKECMD         = /usr/local/MATLAB/R2017a/bin/glnxa64/gmake
 HOST            = UNIX
 BUILD           = yes
 SYS_TARGET_FILE = raccel.tlc
@@ -70,17 +70,17 @@ COMPILER_TOOL_CHAIN = unix
 
 
 MODEL                  = mainModel_matlab2013b
-MODULES                = mainModel_matlab2013b_capi.c mainModel_matlab2013b_data.c mainModel_matlab2013b_tgtconn.c rtGetInf.c rtGetNaN.c rt_logging.c rt_logging_mmi.c rt_nonfinite.c rtw_modelmap_utils.c 
+MODULES                = mainModel_matlab2013b_capi.c mainModel_matlab2013b_data.c mainModel_matlab2013b_tgtconn.c rtGetInf.c rtGetNaN.c rt_nonfinite.c rt_logging_mmi.c rtw_modelmap_utils.c rt_logging.c
 MAKEFILE               = mainModel_matlab2013b.mk
-MATLAB_ROOT            = /usr/local/MATLAB/R2015b
-ALT_MATLAB_ROOT        = /usr/local/MATLAB/R2015b
-MATLAB_ROOTQ           = \"/usr/local/MATLAB/R2015b\"
+MATLAB_ROOT            = /usr/local/MATLAB/R2017a
+ALT_MATLAB_ROOT        = /usr/local/MATLAB/R2017a
+MATLAB_ROOTQ           = \"/usr/local/MATLAB/R2017a\"
 MASTER_ANCHOR_DIR      = 
-START_DIR              = /home/sunil/Desktop/SatelliteStabilizationProject/code/bla
+START_DIR              = /home/manoj/gits/SatelliteStabilizationProject/code/finalModel
 S_FUNCTIONS            = rtiostream_utils.c
-S_FUNCTIONS_LIB        = $(MATLAB_ROOT)/bin/glnxa64/libmwcoder_target_services.so $(MATLAB_ROOT)/bin/glnxa64/libmwcoder_ToAsyncQueueTgtAppSvc.so $(MATLAB_ROOT)/bin/glnxa64/libmwcoder_ParamTuningTgtAppSvc.so
+S_FUNCTIONS_LIB        = $(MATLAB_ROOT)/bin/glnxa64/libmwcoder_target_services.so $(MATLAB_ROOT)/bin/glnxa64/libmwcoder_ParamTuningTgtAppSvc.so
 COMPUTER               = GLNXA64
-BUILDARGS              =  RSIM_SOLVER_SELECTION=2 PCMATLABROOT="/usr/local/MATLAB/R2015b" EXT_MODE=1 ISPROTECTINGMODEL=NOTPROTECTING OPTS="-DSLMSG_ALLOW_SYSTEM_ALLOC -DTGTCONN -DON_TARGET_WAIT_FOR_START=0"
+BUILDARGS              =  ISPROTECTINGMODEL=NOTPROTECTING RSIM_SOLVER_SELECTION=2 PCMATLABROOT="/usr/local/MATLAB/R2017a" EXT_MODE=1 OPTS="-DSLMSG_ALLOW_SYSTEM_ALLOC -DTGTCONN -DON_TARGET_WAIT_FOR_START=0"
 RSIM_PARAMETER_LOADING = 1
 ENABLE_SLEXEC_SSBRIDGE = 0
 
@@ -90,7 +90,7 @@ EXTMODE_TRANSPORT   = 0
 EXTMODE_STATIC      = 0
 EXTMODE_STATIC_SIZE = 1000000
 
-SOLVER              = ode45.c
+SOLVER              = 
 SOLVER_TYPE         = VariableStep
 NUMST               = 1
 TID01EQ             = 0
@@ -105,11 +105,14 @@ SHARED_BIN_DIR      =
 SHARED_LIB          = 
 OPTIMIZATION_FLAGS  = -O0 -fPIC -DNDEBUG
 ADDITIONAL_LDFLAGS  = 
+DEFINES_CUSTOM      = 
 
 RACCEL_PARALLEL_EXECUTION = 0
 RACCEL_PARALLEL_EXECUTION_NUM_THREADS = 2
 RACCEL_NUM_PARALLEL_NODES = 0
 RACCEL_PARALLEL_SIMULATOR_TYPE = 0
+
+MODEL_HAS_DYNAMICALLY_LOADED_SFCNS = 0
 
 # To enable debugging:
 # set DEBUG_BUILD = 1
@@ -179,8 +182,9 @@ MATLAB_INCLUDES = \
 # Additional includes
 
 ADD_INCLUDES = \
-	-I$(START_DIR)/slprj/raccel/mainModel_matlab2013b \
 	-I$(START_DIR) \
+	-I$(MATLAB_ROOT)/simulink/include/sf_runtime \
+	-I$(START_DIR)/slprj/raccel/mainModel_matlab2013b \
 	-I$(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils \
 
 
@@ -225,6 +229,8 @@ ifneq ($(ENABLE_SLEXEC_SSBRIDGE), 0)
    CPP_REQ_DEFINES += -DENABLE_SLEXEC_SSBRIDGE=$(ENABLE_SLEXEC_SSBRIDGE)
 endif
 
+CPP_REQ_DEFINES += -DMODEL_HAS_DYNAMICALLY_LOADED_SFCNS=$(MODEL_HAS_DYNAMICALLY_LOADED_SFCNS)
+
 ifeq ($(RACCEL_PARALLEL_EXECUTION), 1)
    CPP_REQ_DEFINES += -DRACCEL_ENABLE_PARALLEL_EXECUTION \
 		      -DRACCEL_PARALLEL_EXECUTION_NUM_THREADS=$(RACCEL_PARALLEL_EXECUTION_NUM_THREADS) \
@@ -238,8 +244,8 @@ ifeq ($(MULTITASKING),1)
 	               -DNUMST=$(NUMST)
 endif
 
-CFLAGS = $(ANSI_OPTS) $(DBG_FLAG) $(CC_OPTS) $(CPP_REQ_DEFINES) $(INCLUDES)
-CPPFLAGS = $(CPP_ANSI_OPTS) $(DBG_FLAG) $(CPP_OPTS) $(CC_OPTS) $(CPP_REQ_DEFINES) $(INCLUDES)
+CFLAGS = $(ANSI_OPTS) $(DBG_FLAG) $(CC_OPTS) $(DEFINES_CUSTOM) $(CPP_REQ_DEFINES) $(INCLUDES)
+CPPFLAGS = $(CPP_ANSI_OPTS) $(DBG_FLAG) $(CPP_OPTS) $(CC_OPTS) $(DEFINES_CUSTOM) $(CPP_REQ_DEFINES) $(INCLUDES)
 
 #----------------------------- Source Files ------------------------------------
 USER_SRCS =
@@ -249,11 +255,15 @@ ifeq ($(MODELREF_TARGET_TYPE), NONE)
     BIN_SETTING        = $(LD) $(LDFLAGS) -o $(PRODUCT)
     BUILD_PRODUCT_TYPE = "executable"
     REQ_SRCS = $(MODEL).c $(MODULES) $(EXT_SRC) \
-       raccel_sup.c raccel_mat.c simulink_solver_api.c common_utils.c raccel_utils.c
+       raccel_sup.c raccel_mat.c simulink_solver_api.c common_utils.c raccel_utils.c 
     ifneq ($(ENABLE_SLEXEC_SSBRIDGE), 0)
         REQ_SRCS += raccel_main_new.c
     else
         REQ_SRCS += raccel_main.c
+    endif
+
+    ifeq ($(MODEL_HAS_DYNAMICALLY_LOADED_SFCNS), 1)
+	REQ_SRCS += raccel_sfcn_utils.c
     endif
 
 else
@@ -276,11 +286,7 @@ SHARED_OBJS = $(addsuffix .o, $(basename $(SHARED_SRC)))
 
 #--------------------------- Link flags & libraries ----------------------------
 
-SYSLIBS = $(EXT_LIB) -lm
-
-ifneq ($(findstring .cpp,$(suffix $(SRCS), $(USER_SRCS))),)
-  LD = $(CPP)
-endif
+SYSLIBS = $(EXT_LIB) -lm -ldl
 
 LIBS =
  
@@ -301,15 +307,16 @@ ifneq (,$(findstring GLNX,$(COMPUTER)))
   endif
 
   MATLIBS += -Wl,-lmwsl_fileio
-  MATLIBS += -Wl,-lmwsigstream
-  MATLIBS += -Wl,-lmat,-lmx,-lut,-lmwmathutil
+  MATLIBS += -Wl,-lmwsl_services
+  MATLIBS += -Wl,-lmwsigstream,-lmwslio_core,-lmwslio_clients
+  MATLIBS += -Wl,-lmat,-lmx,-lmex,-lut,-lmwmathutil
   MATLIBS += -L$(MATLAB_ROOT)/bin/$(ARCH) -lmwipp -lpthread
 endif
 
 ifneq (,$(findstring MAC,$(COMPUTER)))
  LD = $(CPP)
- LDFLAGS += -Wl,$(ADDITIONAL_LDFLAGS)
- MATLIBS = -L$(BINDIR) -L$(MATLAB_ROOT)/sys/os/$(ARCH)
+ LDFLAGS += $(ADDITIONAL_LDFLAGS)
+ MATLIBS = -Wl,-rpath,$(BINDIR) -Wl,-rpath,@executable_path -Wl,-rpath,@executable_path/$(RELATIVE_PATH_TO_ANCHOR) -L$(BINDIR) -L$(MATLAB_ROOT)/sys/os/$(ARCH)
   ifneq ($(ENABLE_SLEXEC_SSBRIDGE), 0)
     MATLIBS += -lmwslexec_simbridge
   else 
@@ -319,8 +326,9 @@ ifneq (,$(findstring MAC,$(COMPUTER)))
     MATLIBS += -lmwslexec_parallel
   endif
   MATLIBS += -lmwsl_fileio
-  MATLIBS += -lmwsigstream
-  MATLIBS += -lmat -lmx -lut -lmwmathutil
+  MATLIBS += -lmwsl_services
+  MATLIBS += -lmwsigstream -lmwslio_core -lmwslio_clients
+  MATLIBS += -lmat -lmx -lmex -lut -lmwmathutil
   MATLIBS += -L$(MATLAB_ROOT)/bin/$(ARCH) -lmwipp -lpthread
 endif
 
@@ -338,6 +346,7 @@ MATLIBS += -lmwsl_log_load_blocks
 MATLIBS += -lfixedpoint
 MATLIBS += -lmwsl_AsyncioQueue
 MATLIBS += -lmwsl_iofile
+MATLIBS += -lmwsl_simtarget_instrumentation
 
 
 #--------------------------------- Rules ---------------------------------------

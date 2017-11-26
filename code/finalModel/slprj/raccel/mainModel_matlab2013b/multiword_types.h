@@ -1,6 +1,6 @@
 #include "__cf_mainModel_matlab2013b.h"
-#ifndef __MULTIWORD_TYPES_H__
-#define __MULTIWORD_TYPES_H__
+#ifndef MULTIWORD_TYPES_H
+#define MULTIWORD_TYPES_H
 #include "rtwtypes.h"
 typedef int64_T chunk_T ; typedef uint64_T uchunk_T ; typedef long long
 longlong_T ; typedef struct { uint64_T chunks [ 2 ] ; } int128m_T ; typedef
