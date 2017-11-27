@@ -186,8 +186,8 @@ rtcapiStoredFloats [ 0 ] , ( const void * ) & rtcapiStoredFloats [ 1 ] , 1 ,
 , 34 , ( NULL ) , 0 , ( NULL ) , 0 } , { rtBlockParameters , 24 ,
 rtModelParameters , 0 } , { ( NULL ) , 0 } , { rtDataTypeMap , rtDimensionMap
 , rtFixPtMap , rtElementMap , rtSampleTimeMap , rtDimensionArray } , "float"
-, { 1950734370U , 3128587843U , 646050141U , 3109448408U } , ( NULL ) , 0 , 0
-} ; const rtwCAPI_ModelMappingStaticInfo *
+, { 3555331369U , 1960741530U , 2094998048U , 3358266794U } , ( NULL ) , 0 ,
+0 } ; const rtwCAPI_ModelMappingStaticInfo *
 mainModel_matlab2013b_working_attitude_GetCAPIStaticMap ( ) { return &
 mmiStatic ; }
 #ifndef HOST_CAPI_BUILD

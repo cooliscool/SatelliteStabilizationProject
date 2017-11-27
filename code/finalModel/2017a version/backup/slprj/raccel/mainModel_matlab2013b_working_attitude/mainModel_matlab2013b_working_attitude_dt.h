@@ -10,7 +10,7 @@ rtDataTypeNames [ ] = { "real_T" , "real32_T" , "int8_T" , "uint8_T" ,
 , "int_T" , "pointer_T" , "action_T" , "timer_uint32_pair_T" } ; static
 DataTypeTransition rtBTransitions [ ] = { { ( char_T * ) ( & rtB . j242gvklzp
 [ 0 ] ) , 0 , 0 , 67 } , { ( char_T * ) ( & rtDW . i5ihhyg3t3 ) , 0 , 0 , 12
-} , { ( char_T * ) ( & rtDW . arfswbzzzl . LoggedData ) , 11 , 0 , 1 } , { (
+} , { ( char_T * ) ( & rtDW . arfswbzzzl . LoggedData ) , 11 , 0 , 2 } , { (
 char_T * ) ( & rtDW . dlz4fzirji ) , 10 , 0 , 11 } } ; static
 DataTypeTransitionTable rtBTransTable = { 4U , rtBTransitions } ; static
 DataTypeTransition rtPTransitions [ ] = { { ( char_T * ) ( & rtP .

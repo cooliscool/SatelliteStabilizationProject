@@ -411,12 +411,16 @@
       dworkMap.sections(1) = section;
       clear section
       
-      section.nData     = 1;
-      section.data(1)  = dumData; %prealloc
+      section.nData     = 2;
+      section.data(2)  = dumData; %prealloc
       
 	  ;% rtDW.arfswbzzzl.LoggedData
 	  section.data(1).logicalSrcIdx = 12;
 	  section.data(1).dtTransOffset = 0;
+	
+	  ;% rtDW.fwm1cptuj5.LoggedData
+	  section.data(2).logicalSrcIdx = 13;
+	  section.data(2).dtTransOffset = 1;
 	
       nTotData = nTotData + section.nData;
       dworkMap.sections(2) = section;
@@ -426,23 +430,23 @@
       section.data(5)  = dumData; %prealloc
       
 	  ;% rtDW.dlz4fzirji
-	  section.data(1).logicalSrcIdx = 13;
+	  section.data(1).logicalSrcIdx = 14;
 	  section.data(1).dtTransOffset = 0;
 	
 	  ;% rtDW.k2msqlawib
-	  section.data(2).logicalSrcIdx = 14;
+	  section.data(2).logicalSrcIdx = 15;
 	  section.data(2).dtTransOffset = 1;
 	
 	  ;% rtDW.ettvxhsewb
-	  section.data(3).logicalSrcIdx = 15;
+	  section.data(3).logicalSrcIdx = 16;
 	  section.data(3).dtTransOffset = 2;
 	
 	  ;% rtDW.kgldsbhmgx
-	  section.data(4).logicalSrcIdx = 16;
+	  section.data(4).logicalSrcIdx = 17;
 	  section.data(4).dtTransOffset = 3;
 	
 	  ;% rtDW.f4pawnt0hj
-	  section.data(5).logicalSrcIdx = 17;
+	  section.data(5).logicalSrcIdx = 18;
 	  section.data(5).dtTransOffset = 7;
 	
       nTotData = nTotData + section.nData;
@@ -475,8 +479,8 @@
   ;%
 
 
-  targMap.checksum0 = 1950734370;
-  targMap.checksum1 = 3128587843;
-  targMap.checksum2 = 646050141;
-  targMap.checksum3 = 3109448408;
+  targMap.checksum0 = 3555331369;
+  targMap.checksum1 = 1960741530;
+  targMap.checksum2 = 2094998048;
+  targMap.checksum3 = 3358266794;
 

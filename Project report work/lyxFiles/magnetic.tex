@@ -1,0 +1,35 @@
+%% LyX 2.2.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{babel}
+\begin{document}
+\[
+\left(\begin{array}{c}
+d1*m\\
+d2*m\\
+d3*m
+\end{array}\right)xB=Tm(PID)
+\]
+
+\[
+\left(\begin{array}{c}
+d1\\
+d2\\
+d3
+\end{array}\right)=\frac{-pinv(B)x(Tm)}{m}
+\]
+
+This value should be limited between 0 and 1.(0\% or 100\% dutycycle)
+
+Where,
+
+Pinv-Pseudo inverse of B(since B maynot be invertible always)
+
+Tm- Torques given by the PID for momentum dumping controller
+
+d1,d2,d3- Dutycycles that should be given to each coil
+
+B- magnetic field in body frame
+\end{document}

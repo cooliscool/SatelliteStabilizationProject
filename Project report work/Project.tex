@@ -116,6 +116,7 @@ T_{RW}=I_{w}\begin{bmatrix}
 \end{equation}
 Where, \\
 $\omega_{i}-$angular velocity of wheels wrt to the satellite. In normal operation all $\omega_{i}$ will be positive. Sign convention is taken so. \\
+The distribution matrix(to convert Pid output torque to wheel accelerations) is obtained by finding inverse relation using the pseudo inverse.\\
 
 
 \subsection{Tetrahedron Configuration:}
@@ -153,6 +154,30 @@ T_{1}\\T_{2}\\T_{3}\\T_{4}
 \end{bmatrix}
 T_{RW}
 \end{equation}
+\textbf{NOTE:}\\
+Incase of failure of one wheel. we can drop that wheel's part in equation 2.5 and 2.6. matrix will become 3x3. Say if 1st wheel has failed then equations becomes,\\
+\begin{equation}
+T_{RW}=\begin{bmatrix}
+ &\frac{-1}{\sqrt{3}}&\frac{-1}{\sqrt{3}}&\frac{1}{\sqrt{3}} \\
+ &\frac{-1}{\sqrt{3}}&\frac{1}{\sqrt{3}}&\frac{-1}{\sqrt{3}} \\
+ &\frac{1}{\sqrt{3}}&\frac{-1}{\sqrt{3}}&\frac{-1}{\sqrt{3}} 
+\end{bmatrix}
+\begin{bmatrix}
+T_{2}\\T_{3}\\T_{4}
+\end{bmatrix}
+\end{equation}
+\begin{equation}
+\begin{bmatrix}
+T_{2}\\T_{3}\\T_{4}
+\end{bmatrix}
+=\frac{1}{4}\begin{bmatrix}
+-\sqrt{3}&-\sqrt{3}&\sqrt{3}\\
+-\sqrt{3}&\sqrt{3}&-\sqrt{3}\\
+\sqrt{3}&-\sqrt{3}&-\sqrt{3}\\
+\end{bmatrix}
+T_{RW}
+\end{equation}
+
 
 \section{Gravity Gradient Torque:}
 The gravity gradient torque is given by,
@@ -335,7 +360,53 @@ value. However KD and Ki are fixed as per the formulas found.
 	Setpoint is Zero. \\
 This simulation is done with constant disturbance torque on our Nonlinear simulink model to validate the gains(plot is obtained for traditional configuration of reaction wheels)
 \chapter{Momentum Dumping:}
+Momeumtum dumping is achieved by using 3 torque rods in 3 axes.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\linewidth]{momentumDumping}
+	\caption{}
+	\label{fig:momentumdumping}
+\end{figure}
+\section{Magnetic field:}
+Magnetic field data is obtained using dmsp matlab code(www.geomag.us/models/dmsp.html) for one orbit in NED frame. This is converted to ECEF frame and then to orbit frame and stored in get magnetic field block. To fetch the data, we give the time(given by $\int dt$block)\\
+\section{Momentum dumping controller:}
+This block takes in the error in pitch,yaw and roll and returns the dutycycles of PWM that should be given to each torque rod. It should take wheel speeds (it should run only after speeds crossing certain value). \\
+This controller also runs on PID, but with higher gains compared to Attitude controller. The control algorithm is as follows. Whenever Wheels go beyond certain rpm(which is below saturation), calculate torque in 3 axes such that it will overcorrrect the error. When Momentum dumping controller overcorrects, Attitude controller should automatically reduce the speed of wheels to nullify this magnetic disturbance torque.\\
+This torque should be contverted to the corresponding dutycyles.\\
+\[
+\left(\begin{array}{c}
+d1*m\\
+d2*m\\
+d3*m
+\end{array}\right)xB=Tm(PID)
+\]
 
+\[
+\left(\begin{array}{c}
+d1\\
+d2\\
+d3
+\end{array}\right)=\frac{-pinv(B)x(Tm)}{m}
+\]
+
+This value should be limited between 0 and 1.(0\% or 100\% dutycycle)
+
+Where,
+
+Pinv-Pseudo inverse of B(since B maynot be invertible always)
+
+Tm- Torques given by the PID for momentum dumping controller
+
+d1,d2,d3- Dutycycles that should be given to each coil
+
+B- magnetic field in body frame
+
+\section{Magnetic torquer:}
+Magnetic Torquer uses the Dutycyles(control inputs) to find out the Torque acting due to magnetic field on satellite.\\
+magneticTorque = cross((m*dutycycles),B);\\
+where $m=60Am^2$\\
+\section{Disclaimer}
+\textbf{NOTE:}\textbf{momentum dumping doesnot run because of a simulink error which we could not sortout. So implementation of momentum dumping is not done. Only attitude controller using reaction wheel is working fine}
 \chapter{Simulation:}
 \subsection{simulink Model:}
 Since it is easier to visualise the flow of simulation in a graphical environment, simulink is used to simulate the system with controller.
@@ -362,5 +433,22 @@ Energy consumed are as follows,\\
 	\item Traditional-597.5 Joules
 \end{itemize}
 This shows that traditional configuration is more power hungry. Tetrahedral is the clear winner.
+\section{Step Input responses:}
+Here setpoints are fixed at 1 deg and simulation was done with constant disturbance torques.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\linewidth]{Step_pry}
+	\caption{Pitch,Roll,Yaw angles}
+	\label{fig:steppry}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.0\linewidth]{"step_wheel speeds_1"}
+	\caption{speeds of 4 wheels}
+	\label{fig:stepwheel-speeds1}
+\end{figure}
+We can see that the wheel speeds are drifting away. this is due to the lack of momentum dumping part.
+
+
 
 \end{document}

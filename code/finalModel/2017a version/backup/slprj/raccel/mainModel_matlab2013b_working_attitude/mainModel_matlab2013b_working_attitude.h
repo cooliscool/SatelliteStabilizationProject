@@ -59,34 +59,34 @@ real_T jj1m4pu4xq ; real_T pnr1rsr5m2 ; real_T jhmk22jwb1 ; real_T cdqa1b2rvw
 fi3xs4xgh4 ; real_T oifw0jfvcb ; real_T cnrljrwq5q ; real_T ndzhnxmlbe ;
 real_T pgylabzfah ; real_T eakx22dv4l ; real_T flegpay2y0 ; real_T fo5jnezz0v
 ; real_T m2qm2lzxid ; real_T ktbxjai4kr ; real_T lsav5m24co ; struct { void *
-LoggedData ; } arfswbzzzl ; int_T dlz4fzirji ; int_T k2msqlawib ; int_T
-ettvxhsewb ; int_T kgldsbhmgx [ 4 ] ; int_T f4pawnt0hj [ 4 ] ; } DW ; typedef
-struct { real_T gaocubqvzp [ 3 ] ; real_T izvl5sslbs ; real_T iajjy5lruz ;
-real_T gklzlaz1qk ; real_T n2z4nfjamx [ 3 ] ; real_T gswyw4gv0d [ 4 ] ;
-real_T awxsvjgvlk ; } X ; typedef struct { real_T gaocubqvzp [ 3 ] ; real_T
-izvl5sslbs ; real_T iajjy5lruz ; real_T gklzlaz1qk ; real_T n2z4nfjamx [ 3 ]
-; real_T gswyw4gv0d [ 4 ] ; real_T awxsvjgvlk ; } XDot ; typedef struct {
-boolean_T gaocubqvzp [ 3 ] ; boolean_T izvl5sslbs ; boolean_T iajjy5lruz ;
-boolean_T gklzlaz1qk ; boolean_T n2z4nfjamx [ 3 ] ; boolean_T gswyw4gv0d [ 4
-] ; boolean_T awxsvjgvlk ; } XDis ; typedef struct { real_T gaocubqvzp [ 3 ]
-; real_T izvl5sslbs ; real_T iajjy5lruz ; real_T gklzlaz1qk ; real_T
-n2z4nfjamx [ 3 ] ; real_T gswyw4gv0d [ 4 ] ; real_T awxsvjgvlk ; }
-CStateAbsTol ; typedef struct { real_T lagi5bbqa4 [ 4 ] ; real_T ggcau304xb [
-4 ] ; real_T ca5inishgh [ 4 ] ; real_T ifq0vw25v4 [ 4 ] ; } ZCV ; typedef
-struct { rtwCAPI_ModelMappingInfo mmi ; } DataMapInfo ; struct P_ { real_T
-pitchrollyawdesired_Value [ 3 ] ; real_T pitchrollyawInitial_Value [ 3 ] ;
-real_T Gain1_Gain ; real_T Integrator_IC ; real_T Gain_Gain ; real_T
-Gain1_Gain_jkygvdcm0j ; real_T Integrator_IC_hsiqnplk4j ; real_T
-Gain_Gain_j0nwylexu1 ; real_T Gain1_Gain_jyeaph4bso ; real_T
-Integrator_IC_mi1nfze151 ; real_T Gain_Gain_hvers1lhk2 ; real_T
-eachwheelInertia_Value ; real_T initialOmega_Value [ 3 ] ; real_T
-disturbTorques_Value [ 3 ] ; real_T magTorq_Value [ 3 ] ; real_T
-speeds2_Value ; real_T speeds1_Value [ 4 ] ; real_T Integrator2_UpperSat ;
-real_T Integrator2_LowerSat ; real_T radToDeg_Value ; real_T Integrator3_IC ;
-real_T Gain2_Gain ; real_T Gain2_Gain_nggjdhdyc1 ; real_T
-Gain2_Gain_cddumad5uc ; } ; extern const char * RT_MEMORY_ALLOCATION_ERROR ;
-extern B rtB ; extern X rtX ; extern DW rtDW ; extern P rtP ; extern const
-rtwCAPI_ModelMappingStaticInfo *
+LoggedData ; } arfswbzzzl ; struct { void * LoggedData ; } fwm1cptuj5 ; int_T
+dlz4fzirji ; int_T k2msqlawib ; int_T ettvxhsewb ; int_T kgldsbhmgx [ 4 ] ;
+int_T f4pawnt0hj [ 4 ] ; } DW ; typedef struct { real_T gaocubqvzp [ 3 ] ;
+real_T izvl5sslbs ; real_T iajjy5lruz ; real_T gklzlaz1qk ; real_T n2z4nfjamx
+[ 3 ] ; real_T gswyw4gv0d [ 4 ] ; real_T awxsvjgvlk ; } X ; typedef struct {
+real_T gaocubqvzp [ 3 ] ; real_T izvl5sslbs ; real_T iajjy5lruz ; real_T
+gklzlaz1qk ; real_T n2z4nfjamx [ 3 ] ; real_T gswyw4gv0d [ 4 ] ; real_T
+awxsvjgvlk ; } XDot ; typedef struct { boolean_T gaocubqvzp [ 3 ] ; boolean_T
+izvl5sslbs ; boolean_T iajjy5lruz ; boolean_T gklzlaz1qk ; boolean_T
+n2z4nfjamx [ 3 ] ; boolean_T gswyw4gv0d [ 4 ] ; boolean_T awxsvjgvlk ; } XDis
+; typedef struct { real_T gaocubqvzp [ 3 ] ; real_T izvl5sslbs ; real_T
+iajjy5lruz ; real_T gklzlaz1qk ; real_T n2z4nfjamx [ 3 ] ; real_T gswyw4gv0d
+[ 4 ] ; real_T awxsvjgvlk ; } CStateAbsTol ; typedef struct { real_T
+lagi5bbqa4 [ 4 ] ; real_T ggcau304xb [ 4 ] ; real_T ca5inishgh [ 4 ] ; real_T
+ifq0vw25v4 [ 4 ] ; } ZCV ; typedef struct { rtwCAPI_ModelMappingInfo mmi ; }
+DataMapInfo ; struct P_ { real_T pitchrollyawdesired_Value [ 3 ] ; real_T
+pitchrollyawInitial_Value [ 3 ] ; real_T Gain1_Gain ; real_T Integrator_IC ;
+real_T Gain_Gain ; real_T Gain1_Gain_jkygvdcm0j ; real_T
+Integrator_IC_hsiqnplk4j ; real_T Gain_Gain_j0nwylexu1 ; real_T
+Gain1_Gain_jyeaph4bso ; real_T Integrator_IC_mi1nfze151 ; real_T
+Gain_Gain_hvers1lhk2 ; real_T eachwheelInertia_Value ; real_T
+initialOmega_Value [ 3 ] ; real_T disturbTorques_Value [ 3 ] ; real_T
+magTorq_Value [ 3 ] ; real_T speeds2_Value ; real_T speeds1_Value [ 4 ] ;
+real_T Integrator2_UpperSat ; real_T Integrator2_LowerSat ; real_T
+radToDeg_Value ; real_T Integrator3_IC ; real_T Gain2_Gain ; real_T
+Gain2_Gain_nggjdhdyc1 ; real_T Gain2_Gain_cddumad5uc ; } ; extern const char
+* RT_MEMORY_ALLOCATION_ERROR ; extern B rtB ; extern X rtX ; extern DW rtDW ;
+extern P rtP ; extern const rtwCAPI_ModelMappingStaticInfo *
 mainModel_matlab2013b_working_attitude_GetCAPIStaticMap ( void ) ; extern
 SimStruct * const rtS ; extern const int_T gblNumToFiles ; extern const int_T
 gblNumFrFiles ; extern const int_T gblNumFrWksBlocks ; extern rtInportTUtable

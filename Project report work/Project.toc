@@ -20,7 +20,12 @@
 \contentsline {section}{\numberline {4.4}Gains calculated}{10}
 \contentsline {section}{\numberline {4.5}Validation:}{10}
 \contentsline {chapter}{\numberline {5}Momentum Dumping:}{11}
-\contentsline {chapter}{\numberline {6}Simulation:}{12}
-\contentsline {subsection}{\numberline {6.0.1}simulink Model:}{12}
-\contentsline {subsection}{\numberline {6.0.2}Results:}{12}
-\contentsline {subsubsection}{Power Consumption: Traditional vs tetrahedral}{12}
+\contentsline {section}{\numberline {5.1}Magnetic field:}{11}
+\contentsline {section}{\numberline {5.2}Momentum dumping controller:}{11}
+\contentsline {section}{\numberline {5.3}Magnetic torquer:}{12}
+\contentsline {section}{\numberline {5.4}Disclaimer}{12}
+\contentsline {chapter}{\numberline {6}Simulation:}{13}
+\contentsline {subsection}{\numberline {6.0.1}simulink Model:}{13}
+\contentsline {subsection}{\numberline {6.0.2}Results:}{13}
+\contentsline {subsubsection}{Power Consumption: Traditional vs tetrahedral}{13}
+\contentsline {section}{\numberline {6.1}Step Input responses:}{14}
