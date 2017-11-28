@@ -59,7 +59,7 @@ real_T arbmarg4hj ; real_T epbuw5rgnc ; real_T nnabu04l1n ; real_T cckri010rx
 japb5gtzs0 ; real_T jpxj5p2zug ; real_T dezvtc5kyw ; real_T fwpgdori5o ;
 real_T p0215xzpem ; real_T eh4dedqq2g ; real_T gvtpg0pgrv ; real_T ogxld50bto
 ; real_T md5v1s5dr3 ; real_T f42zh3jope ; real_T egrbfzytlm ; struct { void *
-LoggedData ; } lblelcf2nu ; int_T oxwi2zlggz ; int_T hbh24wsp3i ; int_T
+LoggedData ; } ce55aidx01 ; int_T oxwi2zlggz ; int_T hbh24wsp3i ; int_T
 n5fov3ziup ; int_T phlknw1yzh [ 4 ] ; int_T lredu2e0uc [ 4 ] ; } DW ; typedef
 struct { real_T bmi1faj1xs [ 3 ] ; real_T dvbyebomi5 ; real_T ihwnrj44xy ;
 real_T ew4q35tavw ; real_T atqybikdjr [ 3 ] ; real_T m0h3y5azam [ 4 ] ;

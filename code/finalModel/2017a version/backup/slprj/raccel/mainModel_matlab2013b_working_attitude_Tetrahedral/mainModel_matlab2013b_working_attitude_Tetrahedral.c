@@ -428,9 +428,9 @@ ssSetNumBlockIO ( rtS , 34 ) ; ssSetNumBlockParams ( rtS , 37 ) ; } void
 MdlInitializeSampleTimes ( void ) { ssSetSampleTime ( rtS , 0 , 0.0 ) ;
 ssSetSampleTime ( rtS , 1 , 0.0 ) ; ssSetOffsetTime ( rtS , 0 , 0.0 ) ;
 ssSetOffsetTime ( rtS , 1 , 1.0 ) ; } void raccel_set_checksum ( SimStruct *
-rtS ) { ssSetChecksumVal ( rtS , 0 , 4062747268U ) ; ssSetChecksumVal ( rtS ,
-1 , 2998895645U ) ; ssSetChecksumVal ( rtS , 2 , 2483030570U ) ;
-ssSetChecksumVal ( rtS , 3 , 4048989690U ) ; } SimStruct *
+rtS ) { ssSetChecksumVal ( rtS , 0 , 2815267670U ) ; ssSetChecksumVal ( rtS ,
+1 , 4144079598U ) ; ssSetChecksumVal ( rtS , 2 , 3280472746U ) ;
+ssSetChecksumVal ( rtS , 3 , 2821822371U ) ; } SimStruct *
 raccel_register_model ( void ) { static struct _ssMdlInfo mdlInfo ; ( void )
 memset ( ( char * ) rtS , 0 , sizeof ( SimStruct ) ) ; ( void ) memset ( (
 char * ) & mdlInfo , 0 , sizeof ( struct _ssMdlInfo ) ) ; ssSetMdlInfoPtr (
@@ -565,9 +565,9 @@ ssSetSolverIgnoredZcDiagnostic ( rtS , 1 ) ; ssSetSolverMaxConsecutiveMinStep
 rtS , INT_MIN ) ; ssSetTNext ( rtS , rtMinusInf ) ; ssSetSolverNeedsReset (
 rtS ) ; ssSetNumNonsampledZCs ( rtS , 16 ) ; ssSetContStateDisabled ( rtS ,
 contStatesDisabled ) ; ssSetSolverMaxConsecutiveMinStep ( rtS , 1 ) ; }
-ssSetChecksumVal ( rtS , 0 , 4062747268U ) ; ssSetChecksumVal ( rtS , 1 ,
-2998895645U ) ; ssSetChecksumVal ( rtS , 2 , 2483030570U ) ; ssSetChecksumVal
-( rtS , 3 , 4048989690U ) ; { static const sysRanDType rtAlwaysEnabled =
+ssSetChecksumVal ( rtS , 0 , 2815267670U ) ; ssSetChecksumVal ( rtS , 1 ,
+4144079598U ) ; ssSetChecksumVal ( rtS , 2 , 3280472746U ) ; ssSetChecksumVal
+( rtS , 3 , 2821822371U ) ; { static const sysRanDType rtAlwaysEnabled =
 SUBSYS_RAN_BC_ENABLE ; static RTWExtModeInfo rt_ExtModeInfo ; static const
 sysRanDType * systemRan [ 6 ] ; gblRTWExtModeInfo = & rt_ExtModeInfo ;
 ssSetRTWExtModeInfo ( rtS , & rt_ExtModeInfo ) ;

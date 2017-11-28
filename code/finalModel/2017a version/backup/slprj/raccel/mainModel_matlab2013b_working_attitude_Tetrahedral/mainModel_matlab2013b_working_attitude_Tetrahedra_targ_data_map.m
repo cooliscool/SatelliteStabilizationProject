@@ -414,7 +414,7 @@
       section.nData     = 1;
       section.data(1)  = dumData; %prealloc
       
-	  ;% rtDW.lblelcf2nu.LoggedData
+	  ;% rtDW.ce55aidx01.LoggedData
 	  section.data(1).logicalSrcIdx = 12;
 	  section.data(1).dtTransOffset = 0;
 	
@@ -475,8 +475,8 @@
   ;%
 
 
-  targMap.checksum0 = 4062747268;
-  targMap.checksum1 = 2998895645;
-  targMap.checksum2 = 2483030570;
-  targMap.checksum3 = 4048989690;
+  targMap.checksum0 = 2815267670;
+  targMap.checksum1 = 4144079598;
+  targMap.checksum2 = 3280472746;
+  targMap.checksum3 = 2821822371;
 

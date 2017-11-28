@@ -188,7 +188,7 @@ rtcapiStoredFloats [ 0 ] , ( const void * ) & rtcapiStoredFloats [ 1 ] , 1 ,
 , 34 , ( NULL ) , 0 , ( NULL ) , 0 } , { rtBlockParameters , 24 ,
 rtModelParameters , 0 } , { ( NULL ) , 0 } , { rtDataTypeMap , rtDimensionMap
 , rtFixPtMap , rtElementMap , rtSampleTimeMap , rtDimensionArray } , "float"
-, { 4062747268U , 2998895645U , 2483030570U , 4048989690U } , ( NULL ) , 0 ,
+, { 2815267670U , 4144079598U , 3280472746U , 2821822371U } , ( NULL ) , 0 ,
 0 } ; const rtwCAPI_ModelMappingStaticInfo *
 mainModel_matlab2013b_working_attitude_Tetrahedral_GetCAPIStaticMap ( ) {
 return & mmiStatic ; }

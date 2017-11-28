@@ -29,10 +29,10 @@ TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 , 0 } , { 2 , 5 , TARGET_STRING (
 ( "" ) , 0 , 0 , 0 , 0 , 0 } , { 3 , 0 , TARGET_STRING (
 "mainModel_matlab2013b_working_attitude/initial Omega" ) , TARGET_STRING ( ""
 ) , 0 , 0 , 0 , 0 , 1 } , { 4 , 0 , TARGET_STRING (
+"mainModel_matlab2013b_working_attitude/initial rpms" ) , TARGET_STRING ( ""
+) , 0 , 0 , 1 , 0 , 1 } , { 5 , 0 , TARGET_STRING (
 "mainModel_matlab2013b_working_attitude/pitch,roll,yaw Initial" ) ,
-TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 , 1 } , { 5 , 0 , TARGET_STRING (
-"mainModel_matlab2013b_working_attitude/speeds1" ) , TARGET_STRING ( "" ) , 0
-, 0 , 1 , 0 , 1 } , { 6 , 0 , TARGET_STRING (
+TARGET_STRING ( "" ) , 0 , 0 , 0 , 0 , 1 } , { 6 , 0 , TARGET_STRING (
 "mainModel_matlab2013b_working_attitude/Integrator" ) , TARGET_STRING ( "" )
 , 0 , 0 , 0 , 0 , 0 } , { 7 , 0 , TARGET_STRING (
 "mainModel_matlab2013b_working_attitude/Integrator1" ) , TARGET_STRING ( "" )
@@ -97,16 +97,16 @@ rtBlockParameters [ ] = { { 34 , TARGET_STRING (
 ( "Value" ) , 0 , 2 , 0 } , { 36 , TARGET_STRING (
 "mainModel_matlab2013b_working_attitude/initial Omega" ) , TARGET_STRING (
 "Value" ) , 0 , 0 , 0 } , { 37 , TARGET_STRING (
+"mainModel_matlab2013b_working_attitude/initial rpms" ) , TARGET_STRING (
+"Value" ) , 0 , 1 , 0 } , { 38 , TARGET_STRING (
 "mainModel_matlab2013b_working_attitude/magTorq " ) , TARGET_STRING ( "Value"
-) , 0 , 0 , 0 } , { 38 , TARGET_STRING (
+) , 0 , 0 , 0 } , { 39 , TARGET_STRING (
 "mainModel_matlab2013b_working_attitude/pitch,roll,yaw Initial" ) ,
-TARGET_STRING ( "Value" ) , 0 , 0 , 0 } , { 39 , TARGET_STRING (
-"mainModel_matlab2013b_working_attitude/pitch,roll,yaw desired" ) ,
 TARGET_STRING ( "Value" ) , 0 , 0 , 0 } , { 40 , TARGET_STRING (
+"mainModel_matlab2013b_working_attitude/pitch,roll,yaw desired" ) ,
+TARGET_STRING ( "Value" ) , 0 , 0 , 0 } , { 41 , TARGET_STRING (
 "mainModel_matlab2013b_working_attitude/rad To Deg" ) , TARGET_STRING (
-"Value" ) , 0 , 2 , 0 } , { 41 , TARGET_STRING (
-"mainModel_matlab2013b_working_attitude/speeds1" ) , TARGET_STRING ( "Value"
-) , 0 , 1 , 0 } , { 42 , TARGET_STRING (
+"Value" ) , 0 , 2 , 0 } , { 42 , TARGET_STRING (
 "mainModel_matlab2013b_working_attitude/speeds2" ) , TARGET_STRING ( "Value"
 ) , 0 , 2 , 0 } , { 43 , TARGET_STRING (
 "mainModel_matlab2013b_working_attitude/Integrator2" ) , TARGET_STRING (
@@ -144,7 +144,7 @@ rtModelParameters [ ] = { { 0 , ( NULL ) , 0 , 0 , 0 } } ;
 #ifndef HOST_CAPI_BUILD
 static void * rtDataAddrMap [ ] = { & rtB . iquwqtloz2 [ 0 ] , & rtB .
 k2osk23xhu [ 0 ] , & rtB . m3fzt0sb4m [ 0 ] , & rtB . ij0ukvecpm [ 0 ] , &
-rtB . j242gvklzp [ 0 ] , & rtB . owwhqvbcwo [ 0 ] , & rtB . ciu3iftexw [ 0 ]
+rtB . aiazydzpqj [ 0 ] , & rtB . j242gvklzp [ 0 ] , & rtB . ciu3iftexw [ 0 ]
 , & rtB . opuriyedv5 [ 0 ] , & rtB . etpz3h2yod [ 0 ] , & rtB . m3lvyi4r0k ,
 & rtB . feo55pwd4v [ 0 ] , & rtB . n1ohjrgzng [ 0 ] , & rtB . op2c2ayack , &
 rtB . cdqa1b2rvw [ 0 ] , & rtB . orau2tzp4m [ 0 ] , & rtB . ntaykcqfbm [ 0 ]
@@ -155,9 +155,9 @@ mdrm0m2uev , & rtB . ddvv2mb4q1 , & rtB . mgfx13stav , & rtB . kjlahy3veo , &
 rtB . ocl3m0dxtp , & rtB . jhmk22jwb1 , & rtB . emo54xl1nm , & rtB .
 hgkvorfmp1 , & rtP . disturbTorques_Value [ 0 ] , & rtP .
 eachwheelInertia_Value , & rtP . initialOmega_Value [ 0 ] , & rtP .
-magTorq_Value [ 0 ] , & rtP . pitchrollyawInitial_Value [ 0 ] , & rtP .
-pitchrollyawdesired_Value [ 0 ] , & rtP . radToDeg_Value , & rtP .
-speeds1_Value [ 0 ] , & rtP . speeds2_Value , & rtP . Integrator2_UpperSat ,
+initialrpms_Value [ 0 ] , & rtP . magTorq_Value [ 0 ] , & rtP .
+pitchrollyawInitial_Value [ 0 ] , & rtP . pitchrollyawdesired_Value [ 0 ] , &
+rtP . radToDeg_Value , & rtP . speeds2_Value , & rtP . Integrator2_UpperSat ,
 & rtP . Integrator2_LowerSat , & rtP . Integrator3_IC , & rtP .
 Gain_Gain_hvers1lhk2 , & rtP . Gain1_Gain_jyeaph4bso , & rtP . Gain2_Gain , &
 rtP . Integrator_IC_mi1nfze151 , & rtP . Gain_Gain_j0nwylexu1 , & rtP .
@@ -186,8 +186,8 @@ rtcapiStoredFloats [ 0 ] , ( const void * ) & rtcapiStoredFloats [ 1 ] , 1 ,
 , 34 , ( NULL ) , 0 , ( NULL ) , 0 } , { rtBlockParameters , 24 ,
 rtModelParameters , 0 } , { ( NULL ) , 0 } , { rtDataTypeMap , rtDimensionMap
 , rtFixPtMap , rtElementMap , rtSampleTimeMap , rtDimensionArray } , "float"
-, { 3555331369U , 1960741530U , 2094998048U , 3358266794U } , ( NULL ) , 0 ,
-0 } ; const rtwCAPI_ModelMappingStaticInfo *
+, { 87242270U , 580552886U , 3648892907U , 1584751160U } , ( NULL ) , 0 , 0 }
+; const rtwCAPI_ModelMappingStaticInfo *
 mainModel_matlab2013b_working_attitude_GetCAPIStaticMap ( ) { return &
 mmiStatic ; }
 #ifndef HOST_CAPI_BUILD

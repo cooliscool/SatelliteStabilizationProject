@@ -1,0 +1,6 @@
+#include "__cf_mainModel_withGravityGradientTorq.h"
+#ifndef RTW_HEADER_mainModel_withGravityGradientTorq_capi_h
+#define RTW_HEADER_mainModel_withGravityGradientTorq_capi_h
+#include "mainModel_withGravityGradientTorq.h"
+extern void mainModel_withGravityGradientTorq_InitializeDataMapInfo ( ) ;
+#endif
